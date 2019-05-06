@@ -64,3 +64,13 @@
 
 - [openhardwaremonitor](https://github.com/openhardwaremonitor/openhardwaremonitor)
 
+## <font color=#009A000> 0x0A autoJump </font> 
+
+- [autojump](https://github.com/wting/autojump.git)
+    - autojump - a faster way to navigate your filesystem;
+
+## <font color=#009A000> 0x0B dfont </font> 
+
+- [dfont](https://github.com/cloudwu/dfont)
+    - Manage texture for Chinese character rendering.;
+
