@@ -1,6 +1,14 @@
-# <font color=#0099ff> **开源软件收藏夹** </font> 
+# <font color=#0099ff> **开源资料收藏夹** </font> 
 
 > `@think3r` 2019-05-06 22:02:22
+
+#### 1. [计算机相关技术资料整理](https://github.com/hufan30/PraticalProgramingBooks)
+#### 2. [免费的编程中文书籍索引](https://github.com/justjavac/free-programming-books-zh_CN)
+#### 3. [awesome-cheatsheets](https://github.com/skywind3000/awesome-cheatsheets)
+
+----
+
+# <font color=#0099ff> **开源软件收藏夹** </font> 
 
 ## <font color=#009A000> 0x00 virgo </font> 
 
