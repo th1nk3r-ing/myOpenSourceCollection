@@ -1,10 +1,11 @@
 # <font color=#0099ff> **开源资料收藏夹** </font> 
 
 > `@think3r` 2019-05-06 22:02:22
+#### 0. [阮一峰_中文技术文档写作规范](https://github.com/ruanyf/document-style-guide.git)
+#### 1. [awesome-cheatsheets](https://github.com/skywind3000/awesome-cheatsheets)
+#### 2. [计算机相关技术资料整理](https://github.com/hufan30/PraticalProgramingBooks)
+#### 3. [免费的编程中文书籍索引](https://github.com/justjavac/free-programming-books-zh_CN)
 
-#### 1. [计算机相关技术资料整理](https://github.com/hufan30/PraticalProgramingBooks)
-#### 2. [免费的编程中文书籍索引](https://github.com/justjavac/free-programming-books-zh_CN)
-#### 3. [awesome-cheatsheets](https://github.com/skywind3000/awesome-cheatsheets)
 
 ----
 
@@ -20,6 +21,7 @@
     - 可用于阅读一般的 YUV RAW 文件;
     - 支持多种数据格式;
     - 单文件绿色;
+    - 视频编解码必备!
 
 ## <font color=#009A000> 0x02 ip2region </font> 
 
@@ -58,11 +60,7 @@
 - [EasyFlash](https://gitee.com/think3r/EasyFlash)
     - EasyFlash是一款开源的轻量级嵌入式Flash存储器库，主要为MCU(Micro Control Unit)提供便捷、通用的上层应用接口，使得开发者更加高效实现基于的Flash存储器常见应用开发。
 
-## <font color=#009A000> 0x09 中文技术文档写作规范 </font> 
-
-- [阮一峰_中文技术文档写作规范](https://github.com/ruanyf/document-style-guide.git)
-
-## <font color=#009A000> 0x0A openhardwaremonitor </font> 
+## <font color=#009A000> 0x09 openhardwaremonitor </font> 
 
 - [openhardwaremonitor](https://github.com/openhardwaremonitor/openhardwaremonitor)
 
