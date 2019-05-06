@@ -5,6 +5,7 @@
 #### 1. [awesome-cheatsheets](https://github.com/skywind3000/awesome-cheatsheets)
 #### 2. [计算机相关技术资料整理](https://github.com/hufan30/PraticalProgramingBooks)
 #### 3. [免费的编程中文书籍索引](https://github.com/justjavac/free-programming-books-zh_CN)
+#### 4. [leetcode 算法训练](https://leetcode-cn.com/)
 
 
 ----
