@@ -6,7 +6,7 @@
 #### 2. [计算机相关技术资料整理](https://github.com/hufan30/PraticalProgramingBooks)
 #### 3. [免费的编程中文书籍索引](https://github.com/justjavac/free-programming-books-zh_CN)
 #### 4. [leetcode 算法训练](https://leetcode-cn.com/)
-
+#### 5. [C 语言资源大全中文版](https://github.com/jobbole/awesome-c-cn)
 
 ----
 
