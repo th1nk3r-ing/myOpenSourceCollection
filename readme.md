@@ -7,7 +7,7 @@
 #### 3. [免费的编程中文书籍索引](https://github.com/justjavac/free-programming-books-zh_CN)
 #### 4. [leetcode 算法训练](https://leetcode-cn.com/)
 #### 5. [C 语言资源大全中文版](https://github.com/jobbole/awesome-c-cn)
-
+#### 6. [awesome-c](https://github.com/uhub/awesome-c)
 ----
 
 # <font color=#0099ff> **开源软件收藏夹** </font> 
