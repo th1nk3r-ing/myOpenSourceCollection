@@ -8,6 +8,7 @@
 #### 4. [leetcode 算法训练](https://leetcode-cn.com/)
 #### 5. [C 语言资源大全中文版](https://github.com/jobbole/awesome-c-cn)
 #### 6. [awesome-c](https://github.com/uhub/awesome-c)
+#### 7. [Linux Command](https://github.com/jaywcjlove/linux-command.git)
 ----
 
 # <font color=#0099ff> **开源软件收藏夹** </font> 
@@ -79,3 +80,22 @@
 
 - [google-libyuv](https://chromium.googlesource.com/libyuv/libyuv)
     - libyuv是Google开源的实现各种YUV与RGB之间相互转换、旋转、缩放的库。它是跨平台的，可在Windows、Linux、Mac、Android等操作系统，x86、x64、arm架构上进行编译运行，支持SSE、AVX、NEON等SIMD指令加速。
+
+## <font color=#009A000> 0x0D C语言基础库 </font> 
+
+- [uthash](https://github.com/troydhanson/uthash.git)
+    - 开源实现的 hash, list, ringBuffer 宏实现;
+- [vxWork 中的 utilities](https://gitee.com/78023367/VxWorks.git)
+    - 其中的目录 `target/src/util` 同样包含了一些通用数据结构的实现;
+- [grar_lib](https://github.com/gozfree/gear-lib.git)
+    - This is a collection of basic libraries.
+
+## <font color=#009A000> 0x0E busybox 源码 </font> 
+
+- [https://git.busybox.net/busybox/](https://git.busybox.net/busybox/)
+    - 里面的各种小工具值得一看;
+
+## <font color=#009A000> 0x0F play-audio </font> 
+
+- [play-audio __ termux](https://github.com/termux/play-audio.git)
+    - Command-line tool to play audio using OpenSL ES.
