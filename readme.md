@@ -9,6 +9,9 @@
 #### 5. [C 语言资源大全中文版](https://github.com/jobbole/awesome-c-cn)
 #### 6. [awesome-c](https://github.com/uhub/awesome-c)
 #### 7. [Linux Command](https://github.com/jaywcjlove/linux-command.git)
+#### 8. [Laws, Theories, Principles and Patterns that developers will find usefu](https://github.com/dwmkerr/hacker-laws.git)
+#### 9. [libpku-北大课程资料](https://github.com/lib-pku/libpku)
+#### 10. [zju-icicles-浙大资源](https://github.com/QSCTech/zju-icicles)
 ----
 
 # <font color=#0099ff> **开源软件收藏夹** </font> 
@@ -99,3 +102,8 @@
 
 - [play-audio __ termux](https://github.com/termux/play-audio.git)
     - Command-line tool to play audio using OpenSL ES.
+
+## <font color=#009A000> 0x10 linux 黑客基础教程 </font> 
+
+- [OpenCyberTranslationProject/TP1](https://github.com/OpenCyberTranslationProject/TP1)
+    - 书籍：《Linux Basics for Hackers》 2019 版翻译;
