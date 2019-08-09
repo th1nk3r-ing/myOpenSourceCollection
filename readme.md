@@ -122,4 +122,7 @@
 - [Amazing-Windows-Apps](https://github.com/AmazingApps/Amazing-Windows-Apps/tree/master)
     - Introduce you amazing Windows apps;
 
+## <font color=#009A000> 0x14 跟我一起学 MakeFile </font> 
 
+- [跟我一起学 Makefile -- github](https://github.com/seisman/how-to-write-makefile.git)
+    - > 《跟我一起写Makefile》是 陈皓 发表在其CSDN博客上的系列文章。该系列文章翻译整理自 GNU Make Manual ，一直受到读者的推荐，是很多人学习Makefile的首选文档。目前网络上流传的PDF版本多为祝冬华整理的版本。这个版本的排版一般，代码部分没有做任何语法高亮。2010年初学Makefile的时候，读了前几章皮毛，一直用到了现在。最近想着重新学习一下Makefile，顺便学习一下Sphinx，重新制作一个更精美的PDF版本。
