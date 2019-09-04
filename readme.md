@@ -136,3 +136,7 @@
 
 - [learn-regex](https://github.com/ziishaned/learn-regex)
     - github 上比较火的学习正则表达式;
+
+## <font color=#009A000> 0x17 cloc 代码统计 </font>
+
+- [代码统计 - cloc - github](https://github.com/AlDanial/cloc)
