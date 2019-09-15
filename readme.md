@@ -140,3 +140,13 @@
 ## <font color=#009A000> 0x17 cloc 代码统计 </font>
 
 - [代码统计 - cloc - github](https://github.com/AlDanial/cloc)
+
+## <font color=#009A000> 0x18 杭州买房宝典 </font> 
+
+- [杭州买房宝典](https://github.com/MisssssCathy/hangzhou_house_knowledge)
+
+## <font color=#009A000> 0x19 BBC 音效库 </font> 
+
+- [bbc 音效库](http://bbcsfx.acropolis.org.uk/)
+    - 英国广播公司 BBC 的音效库，包含16000多种可以下载的音效，比如停车的声音、机床的声音、鸟叫的声音等等。
+
