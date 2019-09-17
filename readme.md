@@ -150,3 +150,13 @@
 - [bbc 音效库](http://bbcsfx.acropolis.org.uk/)
     - 英国广播公司 BBC 的音效库，包含16000多种可以下载的音效，比如停车的声音、机床的声音、鸟叫的声音等等。
 
+## <font color=#009A000> 0x1A the-book-of-shaders </font> 
+
+- [the-book-of-shaders-github](https://github.com/patriciogonzalezvivo/thebookofshaders)
+- [http://TheBookOfShaders.com](http://TheBookOfShaders.com)
+    - shaders 学习;
+- [https://www.shadertoy.com](https://www.shadertoy.com)
+    - shaders 在线调试, 学习, 分享网站;
+- [stevensona/shader-toy -- vscode](https://github.com/stevensona/shader-toy)
+
+- [【ShaderToy】基础篇之谈谈点、线的绘制](https://blog.csdn.net/candycat1992/article/details/44244549)
