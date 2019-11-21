@@ -169,4 +169,6 @@
 
 ## <font color=#009A000> 0x1B cmake </font>
 
+- [lolimay/CMake-Tutorial](https://github.com/lolimay/CMake-Tutorial)
 - [https://github.com/Campanula/CMake-tutorial](https://github.com/Campanula/CMake-tutorial)
+
