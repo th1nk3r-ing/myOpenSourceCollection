@@ -1,6 +1,9 @@
 # <font color=#0099ff> **开源资料收藏夹** </font>
 
 > `@think3r` 2019-05-06 22:02:22
+
+---
+
 #### 0. [阮一峰_中文技术文档写作规范](https://github.com/ruanyf/document-style-guide.git)
 #### 1. [awesome-cheatsheets](https://github.com/skywind3000/awesome-cheatsheets)
 #### 2. [计算机相关技术资料整理](https://github.com/hufan30/PraticalProgramingBooks)
@@ -12,6 +15,7 @@
 #### 8. [Laws, Theories, Principles and Patterns that developers will find usefu](https://github.com/dwmkerr/hacker-laws.git)
 #### 9. [libpku-北大课程资料](https://github.com/lib-pku/libpku)
 #### 10. [zju-icicles-浙大资源](https://github.com/QSCTech/zju-icicles)
+
 ----
 
 # <font color=#0099ff> **开源软件收藏夹** </font>
@@ -38,7 +42,6 @@
 
 - [conf-c](git@gitee.com:brisk/conf-c.git)
     - 基于C语言的轻量级读取/创建配置文件的函数库
-
 
 ## <font color=#009A000> 0x04 C语言版本图像处理算法 </font>
 
@@ -163,9 +166,8 @@
 
 - learn_openGL
   - [https://learnopengl.com/](https://learnopengl.com/)
-  - [learnopengl-CN  github](https://github.com/LearnOpenGL-CN/LearnOpenGL-CN) 
+  - [learnopengl-CN  github](https://github.com/LearnOpenGL-CN/LearnOpenGL-CN)
     - [learnOpenGL-CN-OnLine](https://learnopengl-cn.github.io/)
-
 
 ## <font color=#009A000> 0x1B cmake </font>
 
@@ -183,4 +185,3 @@
   - image writer
   - image resizer
   - font text rasterizer
-
