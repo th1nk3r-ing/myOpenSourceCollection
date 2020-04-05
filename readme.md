@@ -172,3 +172,15 @@
 - [lolimay/CMake-Tutorial](https://github.com/lolimay/CMake-Tutorial)
 - [https://github.com/Campanula/CMake-tutorial](https://github.com/Campanula/CMake-tutorial)
 
+## <font color=#009A000> 0x1C QT </font>
+
+- [cwc1987/QmlBook-In-Chinese](https://github.com/cwc1987/QmlBook-In-Chinese)
+
+## <font color=#009A000> 0x1D stb 单头文件图像处理库 </font>
+
+- [single-file public domain (or MIT licensed) libraries for C/C++](https://github.com/nothings/stb.git)
+  - image loader
+  - image writer
+  - image resizer
+  - font text rasterizer
+
