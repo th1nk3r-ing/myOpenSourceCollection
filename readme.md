@@ -15,6 +15,7 @@
 #### 8. [Laws, Theories, Principles and Patterns that developers will find usefu](https://github.com/dwmkerr/hacker-laws.git)
 #### 9. [libpku-北大课程资料](https://github.com/lib-pku/libpku)
 #### 10. [zju-icicles-浙大资源](https://github.com/QSCTech/zju-icicles)
+#### 11. [HEU_KMS_Activator--github](https://github.com/zbezj/HEU_KMS_Activator)
 
 ----
 
