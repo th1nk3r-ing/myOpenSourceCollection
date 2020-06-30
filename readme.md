@@ -17,6 +17,9 @@
 #### 10. [zju-icicles-浙大资源](https://github.com/QSCTech/zju-icicles)
 #### 11. [HEU_KMS_Activator--github](https://github.com/zbezj/HEU_KMS_Activator)
 #### 12. [awesome-books](https://github.com/guanpengchn/awesome-books.git)
+#### 13. [GitHub 上有哪些值得推荐的开源电子书？](https://www.zhihu.com/question/38836382/answer/79794319)
+#### 14. [https://github.com/summerHearts/iOS-Books](https://github.com/summerHearts/iOS-Books)
+#### 15. [https://github.com/imlifengfeng/iOSDevBookZH.git](https://github.com/imlifengfeng/iOSDevBookZH.git)
 
 ----
 
@@ -187,3 +190,9 @@
   - image writer
   - image resizer
   - font text rasterizer
+
+## <font color=#009A000> 0x1F powerToys </font>
+
+- 微软官方出品的小工具合集 :
+  - [https://github.com/microsoft/PowerToys](https://github.com/microsoft/PowerToys)
+
