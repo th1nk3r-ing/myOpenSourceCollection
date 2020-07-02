@@ -20,6 +20,7 @@
 #### 13. [GitHub 上有哪些值得推荐的开源电子书？](https://www.zhihu.com/question/38836382/answer/79794319)
 #### 14. [https://github.com/summerHearts/iOS-Books](https://github.com/summerHearts/iOS-Books)
 #### 15. [https://github.com/imlifengfeng/iOSDevBookZH.git](https://github.com/imlifengfeng/iOSDevBookZH.git)
+#### 16. [x64dbg/x64dbgpy](https://github.com/x64dbg/x64dbgpy)
 
 ----
 
@@ -196,3 +197,7 @@
 - 微软官方出品的小工具合集 :
   - [https://github.com/microsoft/PowerToys](https://github.com/microsoft/PowerToys)
 
+## <font color=#009A000> 0x20 source-insight </font>
+
+- [souresinsight4.x x64dbg crack script(包含公钥替换)](https://bbs.pediy.com/thread-259597.htm)
+- [](https://link)
