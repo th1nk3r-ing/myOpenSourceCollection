@@ -21,6 +21,8 @@
 #### 14. [https://github.com/summerHearts/iOS-Books](https://github.com/summerHearts/iOS-Books)
 #### 15. [https://github.com/imlifengfeng/iOSDevBookZH.git](https://github.com/imlifengfeng/iOSDevBookZH.git)
 #### 16. [x64dbg/x64dbgpy](https://github.com/x64dbg/x64dbgpy)
+#### 17. [程序员修炼宝典--github-书籍](https://github.com/niudai/How-to-be-a-good-programmer)
+#### 18. [Deep Learning 中文翻译--github](https://github.com/exacity/deeplearningbook-chinese)
 
 ----
 
@@ -200,4 +202,3 @@
 ## <font color=#009A000> 0x20 source-insight </font>
 
 - [souresinsight4.x x64dbg crack script(包含公钥替换)](https://bbs.pediy.com/thread-259597.htm)
-- [](https://link)
