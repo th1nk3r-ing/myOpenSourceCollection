@@ -210,3 +210,7 @@
   - ubuntu 下源码安装 [Taglib-1.11.1](http://www.linuxfromscratch.org/blfs/view/svn/multimedia/taglib.html)
     - `find . -name "*.ncm" -print0 | xargs -0 /mnt/e/Desktop/github/ncmdump/ncmdump`
     - `find . -name "*.ncm" -print0 | xargs -0 -I {} mv {} ncmDir`
+
+## <font color=#009A000> 0x22 notepad++ 插件  </font>
+
+- [gthub/chcg/NPP_HexEdit](https://github.com/chcg/NPP_HexEdit/releases)
