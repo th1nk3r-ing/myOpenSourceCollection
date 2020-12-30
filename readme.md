@@ -221,3 +221,7 @@
 - vlc
   - [https://github.com/videolan/vlc.git](https://github.com/videolan/vlc.git)
   - [https://github.com/videolan/vlc-android.git](https://github.com/videolan/vlc-android.git)
+
+## <font color=#009A000> 0x24 openBLAS </font>
+
+- [https://github.com/xianyi/OpenBLAS](https://github.com/xianyi/OpenBLAS)
