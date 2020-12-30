@@ -214,3 +214,10 @@
 ## <font color=#009A000> 0x22 notepad++ 插件  </font>
 
 - [gthub/chcg/NPP_HexEdit](https://github.com/chcg/NPP_HexEdit/releases)
+
+## <font color=#009A000> 0x23 开源的播放器 </font>
+
+- [https://gitclone.com/github.com/mpv-player/mpv.git](https://gitclone.com/github.com/mpv-player/mpv.git)
+- vlc
+  - [https://github.com/videolan/vlc.git](https://github.com/videolan/vlc.git)
+  - [https://github.com/videolan/vlc-android.git](https://github.com/videolan/vlc-android.git)
