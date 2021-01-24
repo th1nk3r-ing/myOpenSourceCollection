@@ -221,7 +221,17 @@
 - vlc
   - [https://github.com/videolan/vlc.git](https://github.com/videolan/vlc.git)
   - [https://github.com/videolan/vlc-android.git](https://github.com/videolan/vlc-android.git)
+- mpv :
+  - [mpv](https://github.com/mpv-player/mpv.git)
+  - [mpv for Android](https://github.com/mpv-android/mpv-android.git)
 
-## <font color=#009A000> 0x24 openBLAS </font>
+## <font color=#009A000> 0x24 图像处理 </font>
+
+- [libplacebo](https://github.com/haasn/libplacebo.git)
+- gpu-image :
+  - [GPUImage-ios](https://github.com/BradLarson/GPUImage.git)
+  - [GPUImage for Android](https://github.com/cats-oss/android-gpuimage.git)
+
+## <font color=#009A000> 0x25 openBLAS </font>
 
 - [https://github.com/xianyi/OpenBLAS](https://github.com/xianyi/OpenBLAS)
