@@ -235,3 +235,8 @@
 ## <font color=#009A000> 0x25 openBLAS </font>
 
 - [https://github.com/xianyi/OpenBLAS](https://github.com/xianyi/OpenBLAS)
+
+## <font color=#009A000> 0x26 开源的视频 codec </font>
+
+- [K-Lite](https://codecguide.com/klcp_contents_comparison.htm)
+- [openCodec](https://daumpotplayer.com/wp-content/uploads/2019/06/OpenCodecSetup64.exe)
