@@ -240,3 +240,17 @@
 
 - [K-Lite](https://codecguide.com/klcp_contents_comparison.htm)
 - [openCodec](https://daumpotplayer.com/wp-content/uploads/2019/06/OpenCodecSetup64.exe)
+
+## <font color=#009A000> 0x27 pdf bookmarks </font>
+
+- [PDFBookmarker](https://github.com/RussellLuo/pdfbookmarker.git)
+  - Add bookmarks into PDF using PyPDF2.
+
+  ```sh
+    #install
+    pip install pdfbookmarker
+    # bookmarks file
+    <nested level>"<bookmark title>"|<page number>
+    # run
+    python2 -m pdfbookmarker in.pdf bookmarks.txt out.pdf
+  ```
