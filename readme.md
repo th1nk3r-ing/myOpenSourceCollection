@@ -256,3 +256,30 @@
     # run
     python2 -m pdfbookmarker in.pdf bookmarks.txt out.pdf
   ```
+
+## <font color=#009A000> 0x27 patchelf </font>
+
+- 修改 elf 可执行文件信息, 包括 so 依赖.
+
+```sh
+-> /mnt/e/Desktop/github/mpv/mpvApkTool #: patchelf --help
+syntax: patchelf
+  [--set-interpreter FILENAME]
+  [--page-size SIZE]
+  [--print-interpreter]
+  [--print-soname]              Prints 'DT_SONAME' entry of .dynamic section. Raises an error if DT_SONAME doesn't exist
+  [--set-soname SONAME]         Sets 'DT_SONAME' entry to SONAME.
+  [--set-rpath RPATH]
+  [--remove-rpath]
+  [--shrink-rpath]
+  [--print-rpath]
+  [--force-rpath]
+  [--add-needed LIBRARY]
+  [--remove-needed LIBRARY]
+  [--replace-needed LIBRARY NEW_LIBRARY]
+  [--print-needed]
+  [--no-default-lib]
+  [--debug]
+  [--version]
+  FILENAME
+```
