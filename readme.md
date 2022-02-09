@@ -283,3 +283,10 @@ syntax: patchelf
   [--version]
   FILENAME
 ```
+
+# <font color=#009A000> 0x28 算法相关 </font>
+
+- [github-labuladong-fucking-algorithm`](https://github.com/labuladong/fucking-algorithm)
+  - [https://labuladong.gitee.io/algo/](https://labuladong.gitee.io/algo/)
+- [github-changgyhub-leetcode_101](https://github.com/changgyhub/leetcode_101)
+- [github-greyireland-algorithm-pattern](https://github.com/greyireland/algorithm-pattern)
