@@ -25,6 +25,7 @@
 #### 18. [Deep Learning 中文翻译--github](https://github.com/exacity/deeplearningbook-chinese)
 #### 19. [Google 开源项目风格指南——中文版](https://github.com/zh-google-styleguide/zh-google-styleguide)
 #### 20. [https://github.com/mobinsheng/books.git](https://github.com/mobinsheng/books.git)
+#### 21. [BtbN-FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds/releases)
 
 ----
 
