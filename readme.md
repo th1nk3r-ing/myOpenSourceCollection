@@ -26,6 +26,7 @@
 #### 19. [Google 开源项目风格指南——中文版](https://github.com/zh-google-styleguide/zh-google-styleguide)
 #### 20. [https://github.com/mobinsheng/books.git](https://github.com/mobinsheng/books.git)
 #### 21. [BtbN-FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds/releases)
+#### 22. [CS 自学指南](https://csdiy.wiki/)
 
 ----
 
