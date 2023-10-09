@@ -300,16 +300,17 @@ syntax: patchelf
 ## <font color=#009A000> 0x30 码流分析工具 </font>
 
 1. ffmpeg
+   - [BtbN-FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
 2. CodecVisa(跨平台:H264/H265..., 收费)
-   - http://www.codecian.com/downloads.html
+   - <http://www.codecian.com/downloads.html>
 3. H264BSAnalyzer（H264/H265）:
-   - https://github.com/latelee/H264BSAnalyzer
+   - <https://github.com/latelee/H264BSAnalyzer>
 4. GitlHEVCAnalyzer（H264）
-   - https://github.com/lheric/GitlHEVCAnalyzer
+   - <https://github.com/lheric/GitlHEVCAnalyzer>
 5. Intel Video Pro Analyzer
-   - https://www.bilibili.com/read/cv11653492/
+   - <https://www.bilibili.com/read/cv11653492>
 6. [Bento4](https://www.bento4.com/)
     - [github-code](https://github.com/axiomatic-systems/Bento4)
 7. [YUView](https://github.com/IENT/YUView)
-   - BtbN-FFmpeg-Builds
    - ~~国内的 YUVEye ???~~
+8. [Audacity](https://manual.audacityteam.org/index.html) : 音频分析
