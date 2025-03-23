@@ -210,6 +210,7 @@
 ## <font color=#009A000> 0x21 网易云 ncm 文件转换 </font>
 
 - [https://github.com/anonymous5l/ncmdump.git](https://github.com/anonymous5l/ncmdump.git)
+- <https://github.com/taurusxin/ncmdump.git>
   - mac 下编译 : `brew install taglib && make`
   - ubuntu 下源码安装 [Taglib-1.11.1](http://www.linuxfromscratch.org/blfs/view/svn/multimedia/taglib.html)
     - `find . -name "*.ncm" -print0 | xargs -0 /mnt/e/Desktop/github/ncmdump/ncmdump`
