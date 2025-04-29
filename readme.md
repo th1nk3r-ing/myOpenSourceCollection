@@ -27,6 +27,10 @@
 #### 20. [https://github.com/mobinsheng/books.git](https://github.com/mobinsheng/books.git)
 #### 21. [BtbN-FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds/releases)
 #### 22. [CS 自学指南](https://csdiy.wiki/)
+#### 23. [Learn-Vim(the Smart Way) 中文翻译](https://wsdjeg.net/wiki/learn-vim/)
+#### 24. [The-Art-of-Linear-Algebra](https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra)
+#### 25. [the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
+#### 26. [corkami/pics](https://github.com/corkami/pics) : 文件格式的解析图库
 
 ----
 
@@ -107,6 +111,17 @@
   - 其中的目录 `target/src/util` 同样包含了一些通用数据结构的实现;
 - [grar_lib](https://github.com/gozfree/gear-lib.git)
   - This is a collection of basic libraries.
+- threadPool :
+  - [C-Thread-Pool](https://github.com/Pithikos/C-Thread-Pool)
+  - [lizhenghn123/zl_threadpool](https://github.com/lizhenghn123/zl_threadpool)
+- [EF](https://github.com/fengyoulin/ef) : 协程（池）的实现
+- [cJSON](https://github.com/DaveGamble/cJSON)
+- <https://www.gnu.org/software/coreutils/>
+  - [xxd](https://github.com/ConorOG/xxd)
+- [Android - cpuinfo](https://android.googlesource.com/platform/external/cpuinfo)
+- [edid-decode - linux](https://git.linuxtv.org/edid-decode.git/)
+- [microsoft/mimalloc](https://github.com/microsoft/mimalloc)
+- [redis](https://github.com/redis/redis)
 
 ## <font color=#009A000> 0x0E busybox 源码 </font>
 
@@ -150,7 +165,7 @@
 ## <font color=#009A000> 0x16 regex 正则表达式 </font>
 
 - [learn-regex](https://github.com/ziishaned/learn-regex)
-    - github 上比较火的学习正则表达式;
+  - github 上比较火的学习正则表达式;
 
 ## <font color=#009A000> 0x17 cloc 代码统计 </font>
 
@@ -163,23 +178,38 @@
 ## <font color=#009A000> 0x19 BBC 音效库 </font>
 
 - [bbc 音效库](http://bbcsfx.acropolis.org.uk/)
-    - 英国广播公司 BBC 的音效库，包含16000多种可以下载的音效，比如停车的声音、机床的声音、鸟叫的声音等等。
+  - 英国广播公司 BBC 的音效库，包含16000多种可以下载的音效，比如停车的声音、机床的声音、鸟叫的声音等等。
 
-## <font color=#009A000> 0x1A the-book-of-shaders </font>
+## <font color=#009A000> 0x1A OpenGL 相关 </font>
 
 - [the-book-of-shaders-github](https://github.com/patriciogonzalezvivo/thebookofshaders)
 - [http://TheBookOfShaders.com](http://TheBookOfShaders.com)
   - shaders 学习;
 - [https://www.shadertoy.com](https://www.shadertoy.com)
   - shaders 在线调试, 学习, 分享网站;
+- [stackgl/shader-school](https://github.com/stackgl/shader-school)
 - [stevensona/shader-toy -- vscode](https://github.com/stevensona/shader-toy)
-
 - [【ShaderToy】基础篇之谈谈点、线的绘制](https://blog.csdn.net/candycat1992/article/details/44244549)
-
 - learn_openGL
   - [https://learnopengl.com/](https://learnopengl.com/)
   - [learnopengl-CN  github](https://github.com/LearnOpenGL-CN/LearnOpenGL-CN)
     - [learnOpenGL-CN-OnLine](https://learnopengl-cn.github.io/)
+    - [code](https://github.com/JoeyDeVries/LearnOpenGL)
+- [nanovg](https://github.com/memononen/nanovg)
+- [GLPaintView](https://github.com/lmf12/GLPaintView)
+- [NDK_OpenGLES_3_0](https://github.com/githubhaohao/NDK_OpenGLES_3_0)
+- vulkan :
+  - [Vulkan C++ examples and demos](https://github.com/SaschaWillems/Vulkan)
+  - [Vulkan Samples](https://github.com/BobLChen/VulkanDemos)
+  - [android-vulkan-tutorials](https://github.com/googlesamples/android-vulkan-tutorials)
+  - [vk_video_samples](https://github.com/nvpro-samples/vk_video_samples)
+- render-engine :
+  - [cocos2d-x](https://github.com/cocos2d/cocos2d-x)
+  - [ejoy2d](https://github.com/ejoy/ejoy2d)
+  - [imgui](https://github.com/ocornut/imgui)
+  - [Tencent/tgfx](https://github.com/Tencent/tgfx)
+- OpenCL :
+  - [clpeak](https://github.com/krrishnarraj/clpeak) : openCL 性能测试
 
 ## <font color=#009A000> 0x1B cmake </font>
 
@@ -197,6 +227,10 @@
   - image writer
   - image resizer
   - font text rasterizer
+- [TinyJPEG](https://github.com/serge-rgb/TinyJPEG)
+- [The GIFLIB project](https://giflib.sourceforge.net/)
+- [libnsgif](git://git.netsurf-browser.org/libnsgif.git)
+- [webp](https://github.com/webmproject/libwebp/)
 
 ## <font color=#009A000> 0x1F powerToys </font>
 
@@ -236,6 +270,7 @@
 - gpu-image :
   - [GPUImage-ios](https://github.com/BradLarson/GPUImage.git)
   - [GPUImage for Android](https://github.com/cats-oss/android-gpuimage.git)
+  - [gpupixel](https://github.com/pixpark/gpupixel.git)
 
 ## <font color=#009A000> 0x25 openBLAS </font>
 
@@ -289,6 +324,7 @@ syntax: patchelf
 
 ## <font color=#009A000> 0x28 算法相关 </font>
 
+- [hello-algo](https://github.com/krahets/hello-algo)
 - [github-labuladong-fucking-algorithm`](https://github.com/labuladong/fucking-algorithm)
   - [https://labuladong.gitee.io/algo/](https://labuladong.gitee.io/algo/)
 - [github-changgyhub-leetcode_101](https://github.com/changgyhub/leetcode_101)
@@ -302,6 +338,7 @@ syntax: patchelf
 
 1. ffmpeg
    - [BtbN-FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
+   - [ffmpeg_rtmp_h265](https://github.com/runner365/ffmpeg_rtmp_h265)
 2. CodecVisa(跨平台:H264/H265..., 收费)
    - <http://www.codecian.com/downloads.html>
 3. H264BSAnalyzer（H264/H265）:
@@ -315,3 +352,18 @@ syntax: patchelf
 7. [YUView](https://github.com/IENT/YUView)
    - ~~国内的 YUVEye ???~~
 8. [Audacity](https://manual.audacityteam.org/index.html) : 音频分析
+9. [HDRTools](https://gitlab.com/standards/HDRTools)
+10. [SDL](https://github.com/libsdl-org/SDL)
+11. [THE-H.264-ADVANCED-VIDEO-COMPRESSION-STANDARD](https://github.com/chundonglinlin/THE-H.264-ADVANCED-VIDEO-COMPRESSION-STANDARD)
+12. [digital_video_introduction](https://github.com/leandromoreira/digital_video_introduction)
+13. AV-1
+    1. [SVT-AV1](https://github.com/AOMediaCodec/SVT-AV1.git)
+    2. [libavif](https://github.com/AOMediaCodec/libavif.git)
+14. [scrcpy](https://github.com/Genymobile/scrcpy)
+
+## <font color=#009A000> C++ 相关 </font>
+
+1. [CppCoreGuidelines-zh-CN](https://github.com/lynnboy/CppCoreGuidelines-zh-CN.git)
+2. [google/styleguide](https://github.com/google/styleguide)
+3. [Obfuscate](https://github.com/adamyaxley/Obfuscate)
+4. [nlohmann/json](https://github.com/nlohmann/json)
