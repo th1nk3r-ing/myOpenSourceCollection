@@ -2,35 +2,33 @@
 
 > `@think3r` 2019-05-06 22:02:22
 
----
-
-#### 0. [阮一峰_中文技术文档写作规范](https://github.com/ruanyf/document-style-guide.git)
-#### 1. [awesome-cheatsheets](https://github.com/skywind3000/awesome-cheatsheets)
-#### 2. [计算机相关技术资料整理](https://github.com/hufan30/PraticalProgramingBooks)
-#### 3. [免费的编程中文书籍索引](https://github.com/justjavac/free-programming-books-zh_CN)
-#### 4. [leetcode 算法训练](https://leetcode-cn.com/)
-#### 5. [C 语言资源大全中文版](https://github.com/jobbole/awesome-c-cn)
-#### 6. [awesome-c](https://github.com/uhub/awesome-c)
-#### 7. [Linux Command](https://github.com/jaywcjlove/linux-command.git)
-#### 8. [Laws, Theories, Principles and Patterns that developers will find usefu](https://github.com/dwmkerr/hacker-laws.git)
-#### 9. [libpku-北大课程资料](https://github.com/lib-pku/libpku)
-#### 10. [zju-icicles-浙大资源](https://github.com/QSCTech/zju-icicles)
-#### 11. [HEU_KMS_Activator--github](https://github.com/zbezj/HEU_KMS_Activator)
-#### 12. [awesome-books](https://github.com/guanpengchn/awesome-books.git)
-#### 13. [GitHub 上有哪些值得推荐的开源电子书？](https://www.zhihu.com/question/38836382/answer/79794319)
-#### 14. [https://github.com/summerHearts/iOS-Books](https://github.com/summerHearts/iOS-Books)
-#### 15. [https://github.com/imlifengfeng/iOSDevBookZH.git](https://github.com/imlifengfeng/iOSDevBookZH.git)
-#### 16. [x64dbg/x64dbgpy](https://github.com/x64dbg/x64dbgpy)
-#### 17. [程序员修炼宝典--github-书籍](https://github.com/niudai/How-to-be-a-good-programmer)
-#### 18. [Deep Learning 中文翻译--github](https://github.com/exacity/deeplearningbook-chinese)
-#### 19. [Google 开源项目风格指南——中文版](https://github.com/zh-google-styleguide/zh-google-styleguide)
-#### 20. [https://github.com/mobinsheng/books.git](https://github.com/mobinsheng/books.git)
-#### 21. [BtbN-FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds/releases)
-#### 22. [CS 自学指南](https://csdiy.wiki/)
-#### 23. [Learn-Vim(the Smart Way) 中文翻译](https://wsdjeg.net/wiki/learn-vim/)
-#### 24. [The-Art-of-Linear-Algebra](https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra)
-#### 25. [the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
-#### 26. [corkami/pics](https://github.com/corkami/pics) : 文件格式的解析图库
+0. [阮一峰_中文技术文档写作规范](https://github.com/ruanyf/document-style-guide.git)
+1. [awesome-cheatsheets](https://github.com/skywind3000/awesome-cheatsheets)
+2. [计算机相关技术资料整理](https://github.com/hufan30/PraticalProgramingBooks)
+3. [免费的编程中文书籍索引](https://github.com/justjavac/free-programming-books-zh_CN)
+4. [leetcode 算法训练](https://leetcode-cn.com/)
+5. [C 语言资源大全中文版](https://github.com/jobbole/awesome-c-cn)
+6. [awesome-c](https://github.com/uhub/awesome-c)
+7. [Linux Command](https://github.com/jaywcjlove/linux-command.git)
+8. [Laws, Theories, Principles and Patterns that developers will find usefu](https://github.com/rr/hacker-laws.git)
+9. [libpku-北大课程资料](https://github.com/lib-pku/libpku)
+10. [zju-icicles-浙大资源](https://github.com/QSCTech/zju-icicles)
+11. [HEU_KMS_Activator--github](https://github.com/zbezj/HEU_KMS_Activator)
+12. [awesome-books](https://github.com/guanpengchn/awesome-books.git)
+13. [GitHub 上有哪些值得推荐的开源电子书？](https://www.zhihu.com/question/38836382/answer/79794319)
+14. [https://github.com/summerHearts/iOS-Books](https://github.com/summerHearts/iOS-Books)
+15. [https://github.com/imlifengfeng/iOSDevBookZH.git](https://github.com/imlifengfeng/vBookZH.git)
+16. [x64dbg/x64dbgpy](https://github.com/x64dbg/x64dbgpy)
+17. [程序员修炼宝典--github-书籍](https://github.com/niudai/How-to-be-a-good-programmer)
+18. [Deep Learning 中文翻译--github](https://github.com/exacity/deeplearningbook-chinese)
+19. [Google 开源项目风格指南——中文版](https://github.com/zh-google-styleguide/zh-google-styleguide)
+20. [https://github.com/mobinsheng/books.git](https://github.com/mobinsheng/books.git)
+21. [BtbN-FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds/releases)
+22. [CS 自学指南](https://csdiy.wiki/)
+23. [Learn-Vim(the Smart Way) 中文翻译](https://wsdjeg.net/wiki/learn-vim/)
+24. [The-Art-of-Linear-Algebra](https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra)
+25. [the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
+26. [corkami/pics](https://github.com/corkami/pics) : 文件格式的解析图库
 
 ----
 
@@ -333,6 +331,11 @@ syntax: patchelf
 ## <font color=#009A000> 0x29 驾照 </font>
 
 - [Driver-license](https://github.com/taopoppy/Driver-license)
+
+## <font color=#009A000> 0x2A keystroke visualizer </font>
+
+- [keycastr](https://github.com/keycastr/keycastr) : macos 下的键盘打字可视化
+- [~~KeyCastOW~~](https://github.com/brookhong/KeyCastOW) : 已不维护, 并且无 release 成果物
 
 ## <font color=#009A000> 0x30 码流分析工具 </font>
 
