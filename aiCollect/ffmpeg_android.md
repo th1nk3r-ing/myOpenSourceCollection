@@ -37,7 +37,7 @@ android_camera indev (自动检测 camera2ndk)
 
 **设计目标:** 原为 `libavdevice/opengl_enc.c`（FFmpeg 7.1 前），一个将 raw video 渲染到 OpenGL 窗口的输出设备，类似 `ffmpeg -f opengl ...` 使用。它通过 SDL2（优先）或 GLX/WGL 创建 OpenGL 上下文并显示视频帧。
 
-**已被删除:** 该输出设备于 2024-02 弃用、2025-02 完全移除（commit `9283c5251f`）。当前 `--enable-opengl` 开启后不编译任何文件，`CONFIG_OPENGL` 宏已不在任何源文件中使用。
+**已被删除:** 该输出设备于 2024-02 弃用、2025-02 完全移除（commit `9283c5251f`）。虽然 `--enable-opengl` 选项仍存在于 configure 中（line 336），但启用后不编译任何文件，`CONFIG_OPENGL` 宏已不在任何源文件中使用。
 
 **对 Android 端无意义:**
 - 原实现的 GL 上下文获取只有桌面路径：GLX（X11）、WGL（Windows）、SDL2（桌面 SDL），**没有 EGL**，**没有 ANativeWindow**。
@@ -110,10 +110,15 @@ typedef struct MediaCodecBuffer AVMediaCodecBuffer;  // 不透明，存储在 fr
 | 选项 | 适用 | 说明 |
 |------|------|------|
 | `ndk_codec` | 解码器/编码器 | -1=auto, 0=强制JNI, 1=强制NDK |
-| `delay_flush` | 解码器 | 1=延迟 flush 直到所有 HW buffer 返回 |
+| `delay_flush` | **视频**解码器 | 1=延迟 flush 直到所有 HW buffer 返回（音频解码器不支持） |
 | `operating_rate` | 解码器/编码器 | 目标码率（0=未指定） |
 | `ndk_async` | 编码器 | 1=启用 NDK MediaCodec 异步模式 |
 | `bitrate_mode` | 编码器 | cq/vbr/cbr/cbr_fd |
+| `codec_name` | 编码器 | 按名称选择特定 MediaCodec 实现 |
+| `pts_as_dts` | 编码器 | 使用 PTS 作为 DTS |
+| `qp_i_min` / `qp_i_max` | 编码器 | I 帧 QP 范围限制 |
+| `qp_p_min` / `qp_p_max` | 编码器 | P 帧 QP 范围限制 |
+| `qp_b_min` / `qp_b_max` | 编码器 | B 帧 QP 范围限制 |
 
 ---
 
@@ -267,6 +272,8 @@ FFmpeg 通过 fd 读写内容
 **使用方式:** `ffmpeg -i content://com.example.app/file ...`
 
 ### 4.4 Android 15+ Binder 兼容
+
+> **注意:** 此修复于 2025 年新增，解决 Android 15 (API 35) 上 MediaCodec NDK 无法正常工作的问题。
 
 ```c
 // compat/android/binder.c
@@ -470,7 +477,7 @@ Vulkan texture / 后续 filter / encode
 | `libavcodec/mediacodec.c` | 公共 API | 148 |
 | `libavcodec/mediacodec_surface.c` | Surface/ANativeWindow 管理 | 78 |
 | `libavcodec/jni.c` | JNI API (公开) | 124 |
-| `libavcodec/ffjni.c` | JNI 工具函数 (内部) | 413 |
+| `libavcodec/ffjni.c` | JNI 工具函数 (内部) | 412 |
 | `libavcodec/ffjni.h` | JNI 工具头文件 | 146 |
 | `libavcodec/jni.h` | JNI API 头文件 | 68 |
 | `libavdevice/android_camera.c` | Camera 输入设备 | 874 |
