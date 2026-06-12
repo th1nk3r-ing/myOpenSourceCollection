@@ -13,12 +13,12 @@
 ## FFmpeg 8.1 "Hoare" (2026年3月)
 
 ### 新增解码器
-- xHE-AAC Mps212 解码支持（实验性），通过 libmpeghdec
+- xHE-AAC Mps212 解码支持（实验性）
+- MPEG-H 3D Audio 解码（通过 libmpeghdec）
 - JPEG-XS 编解码器（通过 libsvtjpegxs）
-- APV 解码器及原始比特流封装
 
 ### 新增滤镜
-- `drawvg`：矢量图形绘制滤镜
+- `drawvg`：矢量图形绘制滤镜（via libcairo）
 - `vpp_amf`：AMD AMF 视频处理滤镜
 - `scale_d3d12`、`mestimate_d3d12`、`deinterlace_d3d12`：D3D12 加速滤镜
 
@@ -30,10 +30,17 @@
 ### 协议/封装
 - `hxvs` 解封装器（HXVS/HXVT IP摄像机格式）
 - LCEVC 元数据 bitstream filter
+- LCEVC parser
+- LCEVC enhancement layer exporting in MPEG-TS
 
 ### 其他
 - IAMF：Projection mode Ambisonic Audio Elements 封装/解封装
 - EXIF 元数据解析
+- `gfxcapture`：Windows.Graphics.Capture 窗口/显示器捕获
+- ffprobe `-codec` 选项
+- ffmpeg CLI tiled HEIF 支持
+- Vulkan compute codec optimizations
+- swscale Vulkan support
 - 移除旧的 HLS 协议处理程序
 
 ---
@@ -41,8 +48,8 @@
 ## FFmpeg 8.0 "Huffman" (2025年8月)
 
 ### 新增原生解码器
-- **APV**
-- **ProRes RAW**
+- **APV**（含编码器 via libopenapv、parser、原始比特流封装/解封装、MP4/ISOBMFF 封装）
+- **ProRes RAW**（含 Vulkan hwaccel）
 - **RealVideo 6.0**
 - **Sanyo LD-ADPCM**
 - **G.728**
@@ -58,15 +65,19 @@
 - IBC（Inter Block Copy）
 - ACT（Adaptive Color Transform）
 - Palette Mode
+- VAAPI 解码器
+- Matroska 封装支持
 
 ### 新增硬件加速
 - Vulkan VP9 解码
-- VAAPI VVC 解码
 - Vulkan AV1 编码
 - OpenHarmony H264/5 编解码
 
 ### 新增封装/协议
-- MCC、G.728、Whip、APV
+- MCC、G.728、Whip
+- Enhanced FLV v2：多轨音视频、现代编解码器支持
+- CENC AV1 MP4 支持
+- Animated JPEG XL 编码（via libjxl）
 
 ### 新增滤镜
 - `colordetect`
@@ -76,8 +87,11 @@
 
 ### 其他
 - yasm 支持移除（需使用 nasm）
-- OpenSSL < 1.1.1 移除支持
+- OpenSSL < 1.1.0 移除支持，随后 OpenSSL < 1.1.1 也移除支持
 - OpenMAX 编码器标记废弃
+- `libx265` alpha layer 编码
+- ADPCM IMA Xbox 解码器
+- HDR10+ metadata passthrough（libaom-av1）
 
 ---
 
@@ -89,7 +103,7 @@ VVC 解码器从实验性升级为稳定版，已被广播标准化机构采用
 ### 新增解码器
 - **xHE-AAC 原生解码器**（支持 USAC）
 - **MV-HEVC 解码**（立体声编码工具）
-- **LC-EVC 解码**（通过外部库）
+- **LC-EVC 解码**（增强元数据层，通过外部库 LCEVCdec）
 
 ### Vulkan 编码
 - **Vulkan H.264 编码器**
@@ -98,9 +112,14 @@ VVC 解码器从实验性升级为稳定版，已被广播标准化机构采用
 
 ### 新增功能
 - **Cropping 元数据**：Matroska/MP4 支持
-- **全范围图像（Full-range images）改进**：颜色范围系统重构，修复 10+ 年前的问题
+- **全范围图像（Full-range images）改进**：颜色范围系统重构，YUV colorspace negotiation（废弃 YUVJ 像素格式）
 - IAMF 结构配置（`-stream_group` 选项）
 - 多线程 ffmpeg CLI 滤镜链
+- **FFV1 parser**
+- D3D12VA HEVC 编码器
+- perlin video source
+- RCWT 字幕解封装器
+- LCEVC filter 及 H.26x/MP4 数据导出
 
 ### 新增滤镜
 - `pad_vaapi`、`drawbox_vaapi`
@@ -117,6 +136,7 @@ VVC 解码器从实验性升级为稳定版，已被广播标准化机构采用
 
 ### 新增解码器
 - **VVC 解码器（实验性）**
+- **EVC 解码/编码**（通过 libxevd/libxeve）
 
 ### IAMF 支持
 - `libavformat` 支持读写 IAMF（Immersive Audio）文件
@@ -136,6 +156,13 @@ VVC 解码器从实验性升级为稳定版，已被广播标准化机构采用
 - `quirc` 二维码识别滤镜
 - `qrencode` 二维码生成
 - **DVD-Video 解封装器**（通过 libdvdnav/libdvdread）
+- **HEIF/AVIF 静态图像支持**（含 tiled 图像）
+- Dolby Vision profile 10（AV1）
+- HDR10 metadata passthrough（libx264/libx265/libsvtav1）
+- AFGS1（AOMedia Film Grain Synthesis）
+- dnn filter libtorch 后端
+- ffplay hwaccel 解码（Vulkan/libplacebo）
+- RISC-V 和 Loongarch 优化
 
 ---
 
@@ -193,6 +220,11 @@ VVC 解码器从实验性升级为稳定版，已被广播标准化机构采用
 - `libplacebo` 滤镜集成
 - DoVi（Dolby Vision）支持，包括 tonemapping 和复用
 - Radiance HDR 图像支持
+- nvenc AV1 编码支持
+- QSV AV1 编码器
+- oneVPL 支持
+- VAAPI 10/12bit 422/444 HEVC/VP9 编解码
+- CrystalHD 解码器废弃
 
 ---
 
@@ -204,33 +236,53 @@ VVC 解码器从实验性升级为稳定版，已被广播标准化机构采用
 - `colormap`、`colorchart`
 - `blurdetect`、`chromakey_cuda`
 - `bilateral_cuda`
+- `SITI`、`feedback`、`multiply`
 
 ### 新增协议/格式
 - IPFS/IPNS 网关支持
 - QOI 图像格式
+- PHM 图像格式
+
+### 其他
+- DFPWM 音频编解码器及原始复用/解封装
+- VDPAU AV1 hwaccel
+- PGS 字幕帧合并 bitstream filter
+- Vizrt Binary Image 编解码器
+- pcm-bluray 编码器
+- 移除废弃的 XvMC hwaccel
 
 ---
 
-## FFmpeg 5.0 "Lorentz" (2021年1月)
+## FFmpeg 5.0 "Lorentz" (2022年1月)
 
 ### API 重大变更
 - **移除旧的编码/解码 API**：替换为 N:M API
 - **移除 libavresample 库**
-- **libswscale 新 API**：基于 AVframe
 
 ### 新增解码器
 - **VideoToolbox VP9 硬件加速**
 - **VideoToolbox ProRes** 硬件加速/编码
 - AV1 低开销比特流格式复用器
+- speex 解码器
+- MSN Siren 解码器
 
 ### Vulkan 改进
 - `libplacebo` 滤镜
 - `vflip_vulkan`、`hflip_vulkan`、`flip_vulkan`
-- `yadif_videotoolbox`
+
+### 其他
+- IMF demuxer（实验性）
+- Loongarch 支持
+- swscale slice threading
+- bitpacked 编码器
+- RTP packetizer for uncompressed video (RFC 4175)
 
 ### DoVi 支持
-- DoVi 复用/解码支持
-- Tonemapping
+- DoVi RPU 解析（libavcodec/dovi_rpu.c，by Niklas Haas）
+- HEVC 解码器导出 DoVi RPU side data
+- Dolby Vision ISOM 配置解析/写入（libavformat/dovi_isom.c）
+- Matroska DoVi 支持
+- Tonemapping 和 Remuxing
 
 ---
 
@@ -454,9 +506,9 @@ Vulkan 是跨平台、开放的 GPU API 集，FFmpeg 逐步将其引入作为硬
 | 版本 | 代号 | Vulkan 新增内容 |
 |------|------|----------------|
 | **4.3** | 4:3 | **首个 Vulkan 支持**：`avgblur_vulkan`、`overlay_vulkan`、`scale_vulkan`、`chromaber_vulkan` 滤镜 |
-| **5.0** | Lorentz | `libplacebo` 集成；`vflip_vulkan`、`hflip_vulkan`、`flip_vulkan`、`yadif_videotoolbox` |
+| **5.0** | Lorentz | `libplacebo` 集成；`vflip_vulkan`、`hflip_vulkan`、`flip_vulkan` |
 | **6.1** | Heaviside | **Vulkan 解码 hwaccel**（H264、HEVC、AV1）；`color_vulkan`、`bwdif_vulkan`、`nlmeans_vulkan`、`xfade_vulkan` 滤镜 |
-| **7.0** | Dijkstra | D3D12VA 加速解码（H264/HEVC/VP9/AV1/MPEG-2/VC1） |
+| **7.0** | Dijkstra | D3D12VA 加速解码（H264/HEVC/VP9/AV1/MPEG-2/VC1）—— 注：D3D12VA 为独立 API，非 Vulkan |
 | **7.1** | Péter | **Vulkan H.264 编码器**；**Vulkan HEVC 编码器**；与 VAAPI 功能对等 |
 | **8.0** | Huffman | **Vulkan Compute Codec 新类**：FFv1（编码+解码）、ProRes RAW（仅解码）；**Vulkan VP9 解码**；**Vulkan AV1 编码**；OpenHarmony H264/5 编解码 |
 | **8.1** | Hoare | **ProRes Vulkan 编码**；DPX Vulkan 解码；**Vulkan Compute Codec 优化**（移除运行时 GLSL 编译，加速初始化）；swscale Vulkan 支持；`v360_vulkan` 滤镜；`drawvg` via libcairo |
@@ -473,8 +525,8 @@ Vulkan 是跨平台、开放的 GPU API 集，FFmpeg 逐步将其引入作为硬
 |-------|------|------|
 | FFv1 | ✅ `ffv1_vulkan` | ✅ |
 | ProRes RAW | 即将推出 | ✅ |
-| ProRes | 即将推出 | ✅ |
-| VC-2 | 即将推出 | ✅ |
+| ProRes | ✅（8.1） | ✅（8.1） |
+| VC-2 | 即将推出 | 即将推出 |
 
 ### Vulkan 解码加速支持
 
@@ -498,7 +550,6 @@ Vulkan 是跨平台、开放的 GPU API 集，FFmpeg 逐步将其引入作为硬
 | `vflip_vulkan` | 5.0 | 垂直翻转 |
 | `hflip_vulkan` | 5.0 | 水平翻转 |
 | `flip_vulkan` | 5.0 | 翻转 |
-| `yadif_videotoolbox` | 5.0 | YADIF 去隔行（VideoToolbox） |
 | `color_vulkan` | 6.1 | 颜色调整 |
 | `bwdif_vulkan` | 6.1 | BWDIF 去隔行 |
 | `nlmeans_vulkan` | 6.1 | 非局部均值去噪 |
@@ -506,21 +557,23 @@ Vulkan 是跨平台、开放的 GPU API 集，FFmpeg 逐步将其引入作为硬
 | `v360_vulkan` | next | 360° 视频处理 |
 | `drawvg` | 8.1 | 矢量图形绘制（via libcairo） |
 
+> 注：`yadif_videotoolbox` 是 VideoToolbox（非 Vulkan）滤镜，已从此表移除。
+
 ---
 
 ## 版本对照表
 
 | 版本 | 代号 | 发布年份 | 重大变化 |
 |------|------|----------|----------|
-| **next** | - | ~2026H2 | swscale 重写, ProRes/VC-2 Vulkan 编码, APV Vulkan hwaccel |
+| **next** | - | ~2026H2 | swscale 重写, VC-2 Vulkan 编码, APV Vulkan hwaccel |
 | 8.1 | Hoare | 2026Q1 | Vulkan ProRes 编码/DPX, D3D12 AV1/H264, Rockchip |
 | 8.0 | Huffman | 2025Q3 | Vulkan Compute Codec, VVC 改进 |
 | 7.1 | Péter | 2024Q4 | VVC 稳定, xHE-AAC, Vulkan H.264/HEVC 编码 |
-| 7.0 | Dijkstra | 2024Q2 | VVC 实验性, IAMF, CLI 多线程 |
+| 7.0 | Dijkstra | 2024Q2 | VVC 实验性, IAMF, CLI 多线程, EVC |
 | 6.1 | Heaviside | 2023Q4 | Vulkan 解码, FFT 重写 |
 | 6.0 | Von Neumann | 2023Q1 | MediaCodec, 发布策略变更 |
-| 5.1 | Riemann | 2022Q3 | IPFS, DoVi 改进 |
-| 5.0 | Lorentz | 2021Q1 | API 重构, DoVi, libplacebo |
+| 5.1 | Riemann | 2022Q3 | IPFS, DFPWM |
+| 5.0 | Lorentz | 2022Q1 | API 重构, libplacebo |
 | 4.4 | Rao | 2021Q2 | AV1 SVT, VDPAU 10bit |
 | 4.3 | 4:3 | 2020Q2 | Vulkan 首个支持, librav1e AV1 |
 | 4.2 | Ada | 2019Q3 | dav1d AV1 |
@@ -622,12 +675,14 @@ Vulkan 是跨平台、开放的 GPU API 集，FFmpeg 逐步将其引入作为硬
 
 | Codec | 状态 |
 |-------|------|
-| **ProRes（编码+解码）** | 实现完成，正在 review，预计近期合并 |
+| **ProRes（编码+解码）** | **已在 8.1 释出**（编码） |
 | **VC-2（编码+解码）** | 实现完成，正在 review，预计近期合并 |
 | **FFv1（编码+解码）** | 已在 8.0 释出 |
 | **ProRes RAW（仅解码）** | 已在 8.0 释出 |
 
 > 原文："ProRes (encode+decode) and VC-2 (encode+decode) implementations are complete and currently in review, to be merged soon and available with the next minor release."
+> 
+> 注：ProRes Vulkan 编码已在 8.1 合并（见 Changelog "ProRes Vulkan encoder"），解码状态待确认。
 
 ### swscale 重写（进行中）
 
