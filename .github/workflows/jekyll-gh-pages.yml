@@ -34,6 +34,25 @@ jobs:
             https://raw.githubusercontent.com/th1nk3r-ing/ai_learn/refs/heads/main/code/updateRepoMdFileList.sh
           /bin/bash updateRepoMdFileList.sh handleGithubMdSyntax
           git status
+      - name: Generate Stars Data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api users/th1nk3r-ing/starred --paginate \
+            --jq '.[] | {full_name, description, stargazers_count, language, html_url, updated_at, pushed_at, topics}' \
+            > /tmp/stars-raw.json
+          python3 -c "
+          import json, sys
+          data = []
+          with open('/tmp/stars-raw.json') as f:
+              for line in f:
+                  line = line.strip()
+                  if line:
+                      obj = json.loads(line)
+                      data.append(obj)
+          with open('stars-data.json', 'w') as f:
+              json.dump({'timestamp': __import__('datetime').datetime.utcnow().isoformat() + 'Z', 'repos': data}, f)
+          "
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Build with Jekyll

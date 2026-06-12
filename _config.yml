@@ -15,3 +15,5 @@ author:
 remote_theme: th1nk3r-ing/hacker@v0.2.0.2
 plugins:
 - jekyll-remote-theme
+include:
+- stars-data.json
