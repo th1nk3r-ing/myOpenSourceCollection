@@ -1,5 +1,22 @@
 # Android MediaCodec 从 Android 12 到 Android 17 新特性
 
+> **注意**：Android 17 (API 37) 相关内容基于开发者预览版，正式发布时可能有变化。
+
+## 参考链接
+
+- [MediaCodec](https://developer.android.google.cn/reference/android/media/MediaCodec)
+- [MediaFormat](https://developer.android.google.cn/reference/android/media/MediaFormat)
+- [MediaExtractor](https://developer.android.google.cn/reference/android/media/MediaExtractor)
+- [MediaMuxer](https://developer.android.google.cn/reference/android/media/MediaMuxer)
+- [MediaSync](https://developer.android.google.cn/reference/android/media/MediaSync)
+- [MediaCodecList](https://developer.android.google.cn/reference/android/media/MediaCodecList)
+- [MediaDrm](https://developer.android.google.cn/reference/android/media/MediaDrm)
+- [MediaRecorder](https://developer.android.google.cn/reference/android/media/MediaRecorder)
+- [AudioManager](https://developer.android.google.cn/reference/android/media/AudioManager)
+- [AudioTrack](https://developer.android.google.cn/reference/android/media/AudioTrack)
+- [AudioMixerAttributes](https://developer.android.google.cn/reference/android/media/AudioMixerAttributes)
+- [LoudnessCodecController](https://developer.android.google.cn/reference/android/media/audiofx/LoudnessCodecController)
+
 本文档梳理 Android 12 (API 31) 至 Android 17 (API 37) 期间 MediaCodec 及相关编解码、图像方向的新特性，每个特性包含 **Why**（解决什么问题）和 **How**（如何使用）两部分。
 
 ---
@@ -21,7 +38,7 @@
 | API 30 | `getQueueRequest(int)` | 获取输入槽位的 QueueRequest |
 | API 30 | `mapHardwareBuffer(HardwareBuffer)` | 将 HardwareBuffer 映射为 Image |
 | API 30 | `CONFIGURE_FLAG_USE_BLOCK_MODEL` | 配置 flag，支持 LinearBlock/HardwareBuffer |
-| API 30 | `CONFIGURE_FLAG_USE_CRYPTO_ASYNC` | 异步加密配置 flag |
+| API 34 | `CONFIGURE_FLAG_USE_CRYPTO_ASYNC` | 异步加密配置 flag |
 | API 35 | `queueInputBuffers(int, ArrayDeque<BufferInfo>)` | 批量提交输入 buffer |
 | API 35 | `queueSecureInputBuffers(int, ArrayDeque<BufferInfo>, ArrayDeque<CryptoInfo>)` | 批量提交加密 buffer |
 | API 34 | `BUFFER_FLAG_DECODE_ONLY` | 仅解码不输出 flag |
@@ -289,7 +306,7 @@ val decoder = MediaCodec.createByCodecName(av1DecoderName)
 
 ```kotlin
 val mediaCodecList = MediaCodecList(MediaCodecList.REGULAR_CODECS)
-val codecName = mediaCodecList.findEncoderCodecForFormat(
+    val codecName = mediaCodecList.findEncoderForFormat(
     MediaFormat.createAudioFormat(MediaFormat.MIMETYPE_AUDIO_AAC, 44100, 2)
 )
 

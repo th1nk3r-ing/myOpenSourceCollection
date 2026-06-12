@@ -54,6 +54,8 @@
 | **libtwolame** | MP2 编码 | LGPL | 优化实现 | ✅ | <https://github.com/njh/twolame> |
 | **liblc3** | LC3 编解码 | BSD | *参考实现* | ✅ | <https://github.com/nicxzhang/liblc3> |
 | **libcelt** | CELT 解码 | BSD | *参考实现* | ✅ | <https://downloads.xiph.org/releases/celt/> |
+
+> ⚠️ libcelt 将在下一版本（`<next>`）中移除，参见 FFmpeg Changelog "Remove CELT decoding support"。
 | **libmpeghdec** | MPEG-H 3DA 解码 | Nonfree ✱ | *参考实现* | ✅ | <https://github.com/nicxzhang/libmpeghdec> |
 | **libgme** | 游戏音乐模拟 | LGPL | 其他 | ✅ | <https://github.com/libgme/game-music-emu> |
 | **libflite** | 语音合成 | MIT | 其他 | ✅ | <https://github.com/festvox/flite> |
@@ -135,13 +137,15 @@
 | ~~**libmfx**~~ | Intel Quick Sync Video | MIT | 硬件加速 | ❌ | <https://github.com/Intel-Media-SDK/MediaSDK> |
 | ~~**libvpl**~~ | Intel oneVPL | MIT | 硬件加速 | ❌ | <https://github.com/intel/libvpl> |
 | ~~**libnpp**~~ | NVIDIA NPP | Nonfree | 硬件加速 | ❌ | <https://developer.nvidia.com/cuda-toolkit> |
+| ~~**ffnvcodec**~~ | NVIDIA 编解码头文件 | MIT | 硬件加速 | ❌ | <https://github.com/FFmpeg/nv-codec-headers> |
+| ~~**cuda_sdk**~~ | CUDA SDK | Nonfree | 硬件加速 | ❌ | <https://developer.nvidia.com/cuda-toolkit> |
 | **libglslang** | GLSL→SPIRV 编译 | BSD | 硬件加速 | ✅ | <https://github.com/KhronosGroup/glslang> |
 | **libshaderc** | GLSL→SPIRV 编译 | Apache | 硬件加速 | ✅ | <https://github.com/google/shaderc> |
 | **libv4l2** | Video4Linux2 | LGPL | 硬件加速 | ⚠️ 部分支持 | <https://github.com/gjasny/v4l-utils> |
 | ~~**libdc1394**~~ | IEEE 1394 摄像头 | LGPL | 硬件加速 | ❌ | <https://sourceforge.net/projects/libdc1394/> |
 | ~~**libiec61883**~~ | IEC 61883 | LGPL | 硬件加速 | ❌ | <https://github.com/nicxzhang/libiec61883> |
 | ~~**libpulse**~~ | PulseAudio | LGPL | 系统库 | ❌ | <https://gitlab.freedesktop.org/pulseaudio/pulseaudio> |
-| ~~**libjack**~~ | JACK 音频 | GPL | 系统库 | ❌ | <https://github.com/jackaudio/jack2> |
+| ~~**libjack**~~ | JACK 音频 | LGPL | 系统库 | ❌ | <https://github.com/jackaudio/jack2> |
 | **libcaca** | 文本模式显示 | WTFPL | 其他 | ✅ | <https://github.com/cacalabs/libcaca> |
 | ~~**libcdio**~~ | CD 抓取 | GPL | 其他 | ❌ | <https://github.com/rocky/libcdio> |
 | **libdvdnav** | DVD 导航 | GPL | 其他 | ⚠️ 需交叉编译 | <https://code.videolan.org/videolan/libdvdnav> |
@@ -172,7 +176,7 @@
 
 | 许可证 | 库列表 |
 |:------:|--------|
-| **GPL** | libx264, libx265, libxvid, libxavs, libxavs2, libdavs2, libvidstab, librubberband, libcdio, libdvdnav, libdvdread, frei0r, avisynth, libjack |
+| **GPL** | libx264, libx265, libxvid, libxavs, libxavs2, libdavs2, libvidstab, librubberband, libcdio, libdvdnav, libdvdread, frei0r, avisynth |
 | **Nonfree** | libfdk_aac, libmpeghdec, decklink, libnpp |
 | **Version3** | libopencore_amrnb, libopencore_amrwb, libvo_amrwbenc, libaribb24, liblensfun, gmp, mbedtls, rkmpp |
 | **GPLv3** | libsmbclient |
