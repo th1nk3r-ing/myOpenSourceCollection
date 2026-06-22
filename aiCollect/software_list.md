@@ -21,7 +21,7 @@
 | ------ | --------- |
 | Win | 2026-06-10 |
 | WSL | 2026-06-10 |
-| macOS | 2026-06-13 |
+| macOS | 2026-06-23 |
 
 **表格列说明**：
 
@@ -78,16 +78,16 @@ gh api repos/<owner/repo>/tags -q '.[].name'
 | tldr | WSL-1 | <https://github.com/tldr-pages/tlrc> | v1.11.1 | `tldr --version` | v1.13.1 | ❌ |
 | axel-2.17.14 | WSL-1 | <https://github.com/axel-download-accelerator/axel> | 2.17.14 | `axel --version` | v2.17.14 | ✅ |
 | **macOS** | | | | | | |
-| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 30.0.4 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v30.0.4 | ✅ |
+| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 30.2.4 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v30.2.4 | ✅ |
 | IINA | macOS | <https://github.com/iina/iina> | 1.4.3 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.3 | ✅ |
-| Stats | macOS | <https://github.com/exelban/stats> | 3.0.1 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.1 | ✅ |
+| Stats | macOS | <https://github.com/exelban/stats> | 3.0.4 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.4 | ✅ |
 | KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.10.5 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.10.5 | ✅ |
 | macos | macOS | <https://support.apple.com/zh-cn/109033> | 15.7.7 | `sw_vers` | 15.7.7 (Sequoia)¹ | ✅ |
-| AltTab | macOS | <https://github.com/lwouis/alt-tab-macos> | 11.3.0 | `defaults read /Applications/AltTab.app/Contents/Info.plist CFBundleShortVersionString` | v11.3.0 | ✅ |
+| AltTab | macOS | <https://github.com/lwouis/alt-tab-macos> | 11.3.1 | `defaults read /Applications/AltTab.app/Contents/Info.plist CFBundleShortVersionString` | v11.3.1 | ✅ |
 | Clash Verge | macOS | <https://github.com/clash-verge-rev/clash-verge-rev> | 2.5.1 | `defaults read /Applications/Clash\ Verge.app/Contents/Info.plist CFBundleShortVersionString` | v2.5.1 | ✅ |
 | iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.6.11 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.6.11² | ✅ |
 | Notepad-- | macOS | <https://github.com/cxasm/notepad--> | 3.7.3 | `defaults read /Applications/Notepad--.app/Contents/Info.plist CFBundleShortVersionString` | v3.7.3 | ✅ |
-| Ollama | macOS | <https://github.com/ollama/ollama> | 0.30.7 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.30.7 | ✅ |
+| Ollama | macOS | <https://github.com/ollama/ollama> | 0.30.10 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.30.10 | ✅ |
 
 > ¹ macOS 当前关注 Sequoia (15.x) 分支，暂不关注 Tahoe (26) 版本 ⏸️，后续大版本（如 27）仍会关注。 <br/>
 > ² iTerm2 无 GitHub Releases，最新版本来自 [官网](https://iterm2.com/downloads.html)。 <br/>
