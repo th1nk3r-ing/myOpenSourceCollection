@@ -14,6 +14,7 @@
 | WSL-1 | 仅 WSL-1 环境 |
 | Win+WSL-1(软链接到Win) | Windows 原生 + WSL-1 通过软链接调用 Windows 端 exe |
 | macOS | 仅 macOS |
+| Android | Android 设备（通过 adb 查询本地版本，仅关注 arm64-v8a 架构） |
 
 **检查时间 📅**：
 
@@ -22,6 +23,7 @@
 | Win | 2026-06-10 |
 | WSL | 2026-06-10 |
 | macOS | 2026-06-23 |
+| Android | 2026-06-23 |
 
 **表格列说明**：
 
@@ -70,6 +72,11 @@ gh api repos/<owner/repo>/tags -q '.[].name'
 | Snipaste-2.10.6-x64 | Win | <https://www.snipaste.com/download.html> | 2.11.2⁴ | `exiftool Snipaste.exe \| grep "Product Version"` | 无 release | - |
 | WSL | Win | <https://github.com/microsoft/WSL> | 2.7.8 | `cmd.exe /c wsl --version` | 2.7.8 | ✅ |
 | git | Win | <https://github.com/git-for-windows/git> | 2.54.0 | `cmd.exe /c git --version` | v2.54.0.windows.1 | ✅ |
+| Android Studio | Win | <https://developer.android.com/studio/releases> | 2025.3.4 (AI-253.32098.37.2534.15336583) | `grep '"version"' "/mnt/c/Program Files/Android/Android Studio/product-info.json"` | 2026.1.1 (2026-06-16) | ❌ |
+| window-switcher | Win | <https://github.com/sigoden/window-switcher> | 1.18.0 | `exiftool window-switcher.exe \| grep "Product Version"` | v1.18.0 (2026-06-03) | ✅ |
+| Notepad++ | Win | <https://github.com/notepad-plus-plus/notepad-plus-plus> | 8.9.6.4 | `exiftool notepad++.exe \| grep "Product Version"` | v8.9.6.4 (2026-06-03) | ✅ |
+| Dism++x64 | Win | <https://github.com/Chuyu-Team/Dism-Multi-language> | 10.1.1002.1 | `exiftool Dism++x64.exe \| grep "Product Version"` | v10.1.1002.2 (2023-03-26) | ❌ |
+| ProcessExplorer | Win | <https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer> | 17.12 | `exiftool procexp64.exe \| grep "Product Version"` | v17.12 (2026-05-07) | ✅ |
 | **WSL** | | | | | | |
 | git | WSL-1 | <https://github.com/git/git> | 2.54.0 | `git --version` | v2.54.0 | ✅ |
 | yt-dlp | WSL-1 | <https://github.com/yt-dlp/yt-dlp> | 2026.06.09 | `yt-dlp --version` | 2026.06.09 | ✅ |
@@ -77,6 +84,8 @@ gh api repos/<owner/repo>/tags -q '.[].name'
 | bloaty | WSL-1 | <https://github.com/google/bloaty> | 1.1 | `bloaty --version` | v1.1 | ✅ |
 | tldr | WSL-1 | <https://github.com/tldr-pages/tlrc> | v1.11.1 | `tldr --version` | v1.13.1 | ❌ |
 | axel-2.17.14 | WSL-1 | <https://github.com/axel-download-accelerator/axel> | 2.17.14 | `axel --version` | v2.17.14 | ✅ |
+| exiftool | WSL-1 | <https://github.com/exiftool/exiftool> | 13.59 | `exiftool -ver` | 13.59 | ✅ |
+| fastfetch | WSL-1 | <https://github.com/fastfetch-cli/fastfetch> | 2.64.2 | `fastfetch --version` | 2.64.2 | ✅ |
 | **macOS** | | | | | | |
 | draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 30.2.4 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v30.2.4 | ✅ |
 | IINA | macOS | <https://github.com/iina/iina> | 1.4.3 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.3 | ✅ |
@@ -88,12 +97,23 @@ gh api repos/<owner/repo>/tags -q '.[].name'
 | iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.6.11 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.6.11² | ✅ |
 | Notepad-- | macOS | <https://github.com/cxasm/notepad--> | 3.7.3 | `defaults read /Applications/Notepad--.app/Contents/Info.plist CFBundleShortVersionString` | v3.7.3 | ✅ |
 | Ollama | macOS | <https://github.com/ollama/ollama> | 0.30.10 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.30.10 | ✅ |
+| **Android** | | | | | | |
+| Termux | Android | <https://github.com/termux/termux-app> | 0.118.3 | `adb shell dumpsys package com.termux \| grep versionName` | v0.118.3 (2025-05-22) | ✅ |
+| LibChecker | Android | <https://github.com/LibChecker/LibChecker> | 2.5.4.dev.4049e7c | `adb shell dumpsys package com.absinthe.libchecker \| grep versionName` | 2.5.4 (2026-06-17) | ✅ |
+| Clash Meta | Android | <https://github.com/MetaCubeX/ClashMetaForAndroid> | 2.11.30.Meta | `adb shell dumpsys package com.github.metacubex.clash.meta \| grep versionName` | v2.11.30 (2026-06-06) | ✅ |
+| NewPipe | Android | <https://github.com/TeamNewPipe/NewPipe> | 0.28.8 | `adb shell dumpsys package org.schabi.newpipe \| grep versionName` | v0.28.8 (2026-06-09) | ✅ |
 
 > ¹ macOS 当前关注 Sequoia (15.x) 分支，暂不关注 Tahoe (26) 版本 ⏸️，后续大版本（如 27）仍会关注。 <br/>
 > ² iTerm2 无 GitHub Releases，最新版本来自 [官网](https://iterm2.com/downloads.html)。 <br/>
 > ³ FFmpeg (BtbN) 和 mpv (zhongfly/mpv-winbuild) 无正式 Release tag，`daily build` 为每日构建包，🔄 表示 rolling/daily build 项目，无固定版本对齐。 <br/>
 > ⁴ Snipaste 无开源源码仓库，参考 URL 为官网下载页；exe 有可能已被原地替换升级，文件夹名仍为旧版本。 <br/>
 > ⁵ WSL-1 无法启动图形窗口，因此 ffplay 通过软链接调用 Windows 端的 exe 运行。 <br/>
+> ⁶ Android Studio 无开源仓库 / GitHub Releases，版本信息来自 [官网 releases 页](https://developer.android.com/studio/releases)；本地安装路径为 `/mnt/c/Program Files/Android/`（非 `ProgramFilesMy/`），版本号通过 `product-info.json` 的 `version` 字段获取（如 `AI-253.x.x.2534.x` → `2025.3.4`）。 <br/>
+> ⁷ exiftool 仓库不使用 GitHub Releases，仅用 tags 标记版本，需用 `gh api repos/exiftool/exiftool/tags -q '.[].name'` 查看（与 FFmpeg 同类）。本地从源码构建安装：`perl Makefile.PL && make -j && sudo make install`。 <br/>
+> ⁸ Android 应用本地版本通过 `adb shell dumpsys package <包名> | grep versionName` 查询；LibChecker 本地为开发构建快照（`2.5.4.dev.4049e7c`），与正式 release `2.5.4` 同版本号，标记为 ✅。 <br/>
+> ⁹ Clash Meta（原 Clash for Android）Android 客户端仓库为 `MetaCubeX/ClashMetaForAndroid`，与核心项目 `MetaCubeX/mihomo` 版本号独立；本地 versionName 带 `.Meta` 后缀。 <br/>
+> ¹⁰ Dism++ 仓库 `Chuyu-Team/Dism-Multi-language` 自 2023-03-26 后无新 release，项目处于维护停滞状态，最新版 v10.1.1002.2。 <br/>
+> ¹¹ Process Explorer 为微软 Sysinternals 闭源免费软件，无开源仓库 / GitHub Releases，版本信息与下载来自 [Sysinternals 官网](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer)（与 Snipaste / iTerm2 / Android Studio 同类为闭源例外）。 <br/>
 
-共 30 个条目，27 个 GitHub 仓库。
+共 41 个条目，36 个 GitHub 仓库。
 
