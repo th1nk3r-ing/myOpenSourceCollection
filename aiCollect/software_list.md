@@ -72,7 +72,7 @@ gh api repos/<owner/repo>/tags -q '.[].name'
 | Snipaste-2.10.6-x64 | Win | <https://www.snipaste.com/download.html> | 2.11.2⁴ | `exiftool Snipaste.exe \| grep "Product Version"` | 无 release | - |
 | WSL | Win | <https://github.com/microsoft/WSL> | 2.7.8 | `cmd.exe /c wsl --version` | 2.7.8 | ✅ |
 | git | Win | <https://github.com/git-for-windows/git> | 2.54.0 | `cmd.exe /c git --version` | v2.54.0.windows.1 | ✅ |
-| Android Studio | Win | <https://developer.android.com/studio/releases> | 2025.3.4 (AI-253.32098.37.2534.15336583) | `grep '"version"' "/mnt/c/Program Files/Android/Android Studio/product-info.json"` | 2026.1.1 (2026-06-16) | ❌ |
+| Android Studio | Win | <https://developer.android.google.cn/studio/releases> | 2025.3.4 (AI-253.32098.37.2534.15336583) | `grep '"version"' "/mnt/c/Program Files/Android/Android Studio/product-info.json"` | 2026.1.1 Patch 2 (2026-04-28) | ❌ |
 | window-switcher | Win | <https://github.com/sigoden/window-switcher> | 1.18.0 | `exiftool window-switcher.exe \| grep "Product Version"` | v1.18.0 (2026-06-03) | ✅ |
 | Notepad++ | Win | <https://github.com/notepad-plus-plus/notepad-plus-plus> | 8.9.6.4 | `exiftool notepad++.exe \| grep "Product Version"` | v8.9.6.4 (2026-06-03) | ✅ |
 | Dism++x64 | Win | <https://github.com/Chuyu-Team/Dism-Multi-language> | 10.1.1002.1 | `exiftool Dism++x64.exe \| grep "Product Version"` | v10.1.1002.2 (2023-03-26) | ❌ |
@@ -92,6 +92,8 @@ gh api repos/<owner/repo>/tags -q '.[].name'
 | Stats | macOS | <https://github.com/exelban/stats> | 3.0.4 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.4 | ✅ |
 | KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.10.5 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.10.5 | ✅ |
 | macos | macOS | <https://support.apple.com/zh-cn/109033> | 15.7.7 | `sw_vers` | 15.7.7 (Sequoia)¹ | ✅ |
+| Android Studio | macOS | <https://developer.android.google.cn/studio/releases> | 2025.3 (AI-253.32098.37.2534.15232325) | `python3 -c "import json;print(json.load(open('/Applications/Android Studio.app/Contents/Resources/product-info.json'))['version'])"` | 2026.1.1 Patch 2 (2026-04-28) | ❌ |
+| CC Switch | macOS | <https://github.com/farion1231/cc-switch> | 3.16.3 | `defaults read "/Applications/CC Switch.app/Contents/Info.plist" CFBundleShortVersionString` | v3.16.3 (2026-06-14) | ✅ |
 | AltTab | macOS | <https://github.com/lwouis/alt-tab-macos> | 11.3.1 | `defaults read /Applications/AltTab.app/Contents/Info.plist CFBundleShortVersionString` | v11.3.1 | ✅ |
 | Clash Verge | macOS | <https://github.com/clash-verge-rev/clash-verge-rev> | 2.5.1 | `defaults read /Applications/Clash\ Verge.app/Contents/Info.plist CFBundleShortVersionString` | v2.5.1 | ✅ |
 | iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.6.11 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.6.11² | ✅ |
@@ -115,5 +117,5 @@ gh api repos/<owner/repo>/tags -q '.[].name'
 > ¹⁰ Dism++ 仓库 `Chuyu-Team/Dism-Multi-language` 自 2023-03-26 后无新 release，项目处于维护停滞状态，最新版 v10.1.1002.2。 <br/>
 > ¹¹ Process Explorer 为微软 Sysinternals 闭源免费软件，无开源仓库 / GitHub Releases，版本信息与下载来自 [Sysinternals 官网](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer)（与 Snipaste / iTerm2 / Android Studio 同类为闭源例外）。 <br/>
 
-共 41 个条目，36 个 GitHub 仓库。
+共 43 个条目，37 个 GitHub 仓库。
 
