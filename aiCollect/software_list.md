@@ -22,7 +22,7 @@
 | ------ | --------- |
 | Win | 2026-06-28 |
 | WSL-1 | 2026-06-28 |
-| macOS | 2026-06-29 |
+| macOS | 2026-06-30 |
 | Android | 2026-06-23 |
 
 **表格列说明**：
@@ -63,6 +63,53 @@ gh api repos/<owner/repo>/releases/latest --jq '.assets[] | select(.name=="<asse
 sha256sum <下载的文件>   # 两处哈希一致即校验通过
 ```
 
+## GitHub Release 加速下载
+
+GitHub Release 文件（`.dmg` / `.exe` / `.tar.gz` 等）在国内直连常被干扰阻断。通过**反代代理**中转可大幅提速。
+
+### 加速源格式
+
+```
+https://<加速源域名>/https://github.com/<owner>/<repo>/releases/download/<tag>/<file>
+```
+
+### 实测最快加速源
+
+2026-06-30 以 macOS 29.5 MB DMG 实测排序：
+
+| 排名 | 加速源 | 实测速度 | 地区 |
+|------|--------|---------|------|
+| 🥇 | `github.boki.moe` | ~9.8 MB/s | 美国 |
+| 🥈 | `cors.isteed.cc` | ~8.9 MB/s | 美国 |
+| 🥉 | `ghproxy.net` | ~5.0 MB/s | 英国 |
+| 4 | `ghfast.top` | ~2.8 MB/s | 韩国 首尔 |
+| 5 | `wget.la` | ~450 KB/s | 中国 香港 |
+
+> 以上为 Release / Code(ZIP) 类文件加速源，Git Clone / Raw 另有独立加速源，此处不展开。
+
+### 使用示例
+
+```bash
+# 通用格式
+curl -# -o <file> "https://<加速源>/https://github.com/<owner>/<repo>/releases/download/<tag>/<file>"
+
+# 示例：通过 ghproxy.net 下载 CC Switch v3.16.4 DMG
+curl -# -o /tmp/CC-Switch-v3.16.4-macOS.dmg \
+  "https://ghproxy.net/https://github.com/farion1231/cc-switch/releases/download/v3.16.4/CC-Switch-v3.16.4-macOS.dmg"
+
+# 校验 SHA256
+gh api repos/farion1231/cc-switch/releases/tags/v3.16.4 \
+  --jq '.assets[] | select(.name=="CC-Switch-v3.16.4-macOS.dmg") | .digest'
+sha256sum /tmp/CC-Switch-v3.16.4-macOS.dmg
+```
+
+### 参考链接
+
+- [XIU2/UserScript](https://github.com/XIU2/UserScript) — GitHub 增强高速下载油猴脚本，自动注入加速按钮
+- [hunshcn/gh-proxy](https://github.com/hunshcn/gh-proxy) — 开源反代加速方案
+- [WJQSERVER-STUDIO/ghproxy](https://github.com/WJQSERVER-STUDIO/ghproxy) — 另一反代加速实现
+- 加速源完整列表：[XIU2 Wiki](https://github.com/XIU2/UserScript/wiki/Github-%E5%A2%9E%E5%BC%BA-%E2%80%90-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD)
+
 
 ## 软件清单
 
@@ -102,18 +149,18 @@ sha256sum <下载的文件>   # 两处哈希一致即校验通过
 | gh | WSL-1 | <https://github.com/cli/cli> | 2.95.0 | `gh --version` | v2.95.0 | ✅ |
 | checksec | WSL-1 | <https://github.com/slimm609/checksec> | 3.2.0 | `checksec --version` | 3.2.0 | ✅ |
 | **macOS** | | | | | | |
-| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 30.2.6 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v30.2.6 | ❌ |
-| IINA | macOS | <https://github.com/iina/iina> | 1.4.4 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.4 | ❌ |
-| Stats | macOS | <https://github.com/exelban/stats> | 3.0.5 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.5 | ❌ |
+| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 30.2.6 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v30.2.6 | ✅ |
+| IINA | macOS | <https://github.com/iina/iina> | 1.4.4 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.4 | ✅ |
+| Stats | macOS | <https://github.com/exelban/stats> | 3.0.5 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.5 | ✅ |
 | KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.10.5 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.10.5 | ✅ |
 | macOS (系统) | macOS | <https://support.apple.com/zh-cn/109033> | 15.7.7 | `sw_vers` | 15.7.7 (Sequoia)¹ | ✅ |
 | Android Studio | macOS | <https://developer.android.google.cn/studio/releases> | 2025.3 (AI-253.32098.37.2534.15232325) | `python3 -c "import json;print(json.load(open('/Applications/Android Studio.app/Contents/Resources/product-info.json'))['version'])"` | 2026.1.1 Patch 2 (2026-04-28) | ❌ |
-| CC Switch | macOS | <https://github.com/farion1231/cc-switch> | 3.16.4 | `defaults read "/Applications/CC Switch.app/Contents/Info.plist" CFBundleShortVersionString` | v3.16.4 | ❌ |
+| CC Switch | macOS | <https://github.com/farion1231/cc-switch> | 3.16.4 | `defaults read "/Applications/CC Switch.app/Contents/Info.plist" CFBundleShortVersionString` | v3.16.4 | ✅ |
 | AltTab | macOS | <https://github.com/lwouis/alt-tab-macos> | 11.3.1 | `defaults read /Applications/AltTab.app/Contents/Info.plist CFBundleShortVersionString` | v11.3.1 | ✅ |
 | Clash Verge | macOS | <https://github.com/clash-verge-rev/clash-verge-rev> | 2.5.1 | `defaults read /Applications/Clash\ Verge.app/Contents/Info.plist CFBundleShortVersionString` | v2.5.1 | ✅ |
 | iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.6.11 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.6.11² | ✅ |
 | Notepad-- | macOS | <https://github.com/cxasm/notepad--> | 3.7.3 | `defaults read /Applications/Notepad--.app/Contents/Info.plist CFBundleShortVersionString` | v3.7.3 | ✅ |
-| Ollama | macOS | <https://github.com/ollama/ollama> | 0.30.11 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.30.11 | ❌ |
+| Ollama | macOS | <https://github.com/ollama/ollama> | 0.30.11 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.30.11 | ✅ |
 | gh | macOS | <https://github.com/cli/cli> | 2.95.0 | `gh --version` | v2.95.0 | ✅ |
 | checksec | macOS | <https://github.com/slimm609/checksec> | 3.2.0 | `checksec --version` | 3.2.0 | ✅ |
 | list_cpu_features | macOS | <https://github.com/google/cpu_features> | 0.11.0 | 源码编译（cmake） | 0.11.0 | 🔨 ✅ |
