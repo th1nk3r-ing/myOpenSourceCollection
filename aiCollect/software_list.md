@@ -32,6 +32,7 @@
 | ✅ | 已是最新正式版 |
 | ❌ | 有更新可用 |
 | 🔄 | daily/rolling build（性质标记，与 ✅/❌ 组合表示新鲜度：✅ 本地构建与最新构建对齐，❌ 落后） |
+| 🔨 | 源码编译（无预编译发行版，需本地构建） |
 | ⏸️ | 暂不关注/跳过某个版本 |
 | - | 不适用 |
 
@@ -96,8 +97,8 @@ sha256sum <下载的文件>   # 两处哈希一致即校验通过
 | bloaty | WSL-1 | <https://github.com/google/bloaty> | 1.1 | `bloaty --version` | v1.1 | ✅ |
 | tldr | WSL-1 | <https://github.com/tldr-pages/tlrc> | v1.11.1 | `tldr --version` | v1.13.1 | ❌ |
 | axel-2.17.14 | WSL-1 | <https://github.com/axel-download-accelerator/axel> | 2.17.14 | `axel --version` | v2.17.14 | ✅ |
-| exiftool | WSL-1 | <https://github.com/exiftool/exiftool> | 13.59 | `exiftool -ver` | 13.59 | ✅ |
-| fastfetch | WSL-1 | <https://github.com/fastfetch-cli/fastfetch> | 2.65.1 | `fastfetch --version` | 2.65.1 | ✅ |
+| exiftool | WSL-1 | <https://github.com/exiftool/exiftool> | 13.59 | `exiftool -ver` | 13.59 | 🔨 ✅ |
+| fastfetch | WSL-1 | <https://github.com/fastfetch-cli/fastfetch> | 2.65.2 | `fastfetch --version` | 2.65.2 | 🔨 ✅ |
 | gh | WSL-1 | <https://github.com/cli/cli> | 2.95.0 | `gh --version` | v2.95.0 | ✅ |
 | checksec | WSL-1 | <https://github.com/slimm609/checksec> | 3.2.0 | `checksec --version` | 3.2.0 | ✅ |
 | **macOS** | | | | | | |
@@ -115,6 +116,7 @@ sha256sum <下载的文件>   # 两处哈希一致即校验通过
 | Ollama | macOS | <https://github.com/ollama/ollama> | 0.30.11 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.30.11 | ❌ |
 | gh | macOS | <https://github.com/cli/cli> | 2.95.0 | `gh --version` | v2.95.0 | ✅ |
 | checksec | macOS | <https://github.com/slimm609/checksec> | 3.2.0 | `checksec --version` | 3.2.0 | ✅ |
+| list_cpu_features | macOS | <https://github.com/google/cpu_features> | 0.11.0 | 源码编译（cmake） | 0.11.0 | 🔨 ✅ |
 | **Android** | | | | | | |
 | Termux | Android | <https://github.com/termux/termux-app> | 0.118.3 | `adb shell dumpsys package com.termux \| grep versionName` | v0.118.3 (2025-05-22) | ✅ |
 | LibChecker | Android | <https://github.com/LibChecker/LibChecker> | 2.5.4.dev.4049e7c | `adb shell dumpsys package com.absinthe.libchecker \| grep versionName` | 2.5.4 (2026-06-17) | ✅ |
