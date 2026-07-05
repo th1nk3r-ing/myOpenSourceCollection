@@ -1,6 +1,6 @@
 # 开源软件清单
 
-## 背景知识
+## 1. 背景知识
 
 **Windows 版本**：Windows 软件存放在 `/mnt/c/ProgramFilesMy/`（WSL 挂载的 Windows C 盘自定义目录），主要通过 `exiftool` 检查 exe 文件的 Product Version 确认本地版本，部分软件使用其他方式（见表格）。
 
@@ -8,24 +8,16 @@
 
 **注意**：并非所有仓库都有 GitHub Releases 页面，有些项目（如 FFmpeg）仅使用 tags 标记版本，`gh release list` 会返回空。
 
-**平台说明**：
+**平台说明 & 检查时间**：
 
-| 缩写 | 含义 |
-| ------ | ------ |
-| Win | 仅 Windows 原生 |
-| WSL-1 | 仅 WSL-1 环境（仅关注 x64 架构） |
-| Win+WSL-1(软链接到Win) | Windows 原生 + WSL-1 通过软链接调用 Windows 端 exe |
-| macOS | 仅 macOS（仅关注 arm64 架构） |
-| Android | Android 设备（通过 adb 查询本地版本，仅关注 arm64-v8a 架构） |
-
-**检查时间 📅**：
-
-| 平台 | 最近检查 |
-| ------ | --------- |
-| Win | 2026-06-28 |
-| WSL-1 | 2026-06-28 |
-| macOS | 2026-06-30 |
-| Android | 2026-06-23 |
+| 缩写 | 含义 | 最近检查 |
+| ------ | ------ | --------- |
+| Win | 仅 Windows 原生 | 2026-06-28 |
+| Win -> WSL-1 | Windows 软链接到 WSL-1 | 2026-06-28 |
+| WSL-1 | 仅 WSL-1 环境（仅关注 x64 架构） | 2026-06-28 |
+| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-06-30 |
+| macOS Homebrew | macOS Homebrew 统一管理（`brew leaves`） | 2026-07-06 |
+| Android | Android 设备（通过 adb 查询本地版本，仅关注 arm64-v8a 架构） | 2026-06-23 |
 
 **表格列说明**：
 
@@ -65,7 +57,7 @@ gh api repos/<owner/repo>/releases/latest --jq '.assets[] | select(.name=="<asse
 sha256sum <下载的文件>   # 两处哈希一致即校验通过
 ```
 
-## GitHub Release 加速下载
+## 2. GitHub Release 加速下载
 
 GitHub Release 文件（`.dmg` / `.exe` / `.tar.gz` 等）在国内直连常被干扰阻断。通过**反代代理**中转可大幅提速。
 
@@ -113,17 +105,18 @@ sha256sum /tmp/CC-Switch-v3.16.4-macOS.dmg
 - 加速源完整列表：[XIU2 Wiki](https://github.com/XIU2/UserScript/wiki/Github-%E5%A2%9E%E5%BC%BA-%E2%80%90-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD)
 
 
-## 软件清单
+## 3. Win
+
+### 原生软件
 
 | 本地文件/文件夹 | 平台 | 参考 URL | 本地版本 | 查本地版本方法 | 最新版本 | 是否最新 |
 | ---------------- | ------ | -------- | --------- | -------------- | -------- | ------ |
-| **Windows** | | | | | | |
 | ffmpeg | Win⁵ | <https://github.com/BtbN/FFmpeg-Builds> | n8.1.2 (2026-06-27) | `ffmpeg.exe -version`（以命令输出为准，不用文件夹名/exiftool） | daily build 2026-06-27³ | 🔄 ✅ |
 | RenderDoc_1.44_64 | Win | <https://github.com/baldurk/renderdoc> | v1.44 | `exiftool renderdocui.exe \| grep "Product Version"` | v1.44 | ✅ |
-| scrcpy | Win+WSL-1(软链接到Win) | <https://github.com/Genymobile/scrcpy> | 4.0 | `scrcpy --version` | v4.0 | ✅ |
-| jadx-gui-1.5.5 | Win+WSL-1(软链接到Win) | <https://github.com/skylot/jadx> | 1.5.5 | `exiftool jadx-gui.exe \| grep "Product Version"` | v1.5.5 | ✅ |
+| scrcpy | Win -> WSL-1 | <https://github.com/Genymobile/scrcpy> | 4.0 | `scrcpy --version` | v4.0 | ✅ |
+| jadx-gui-1.5.5 | Win -> WSL-1 | <https://github.com/skylot/jadx> | 1.5.5 | `exiftool jadx-gui.exe \| grep "Product Version"` | v1.5.5 | ✅ |
 | draw.io | Win | <https://github.com/jgraph/drawio-desktop> | 30.2.6 | `exiftool draw.io.exe \| grep "Product Version"` | v30.2.6 | ✅ |
-| mpv-x86_64-v3 | Win+WSL-1(软链接到Win) | <https://github.com/zhongfly/mpv-winbuild> | v0.41.0-821-g62f149466 (2026-06-27) | `mpv --version`（以命令输出为准，不用文件夹名） | daily build 2026-06-27³ | 🔄 ✅ |
+| mpv-x86_64-v3 | Win -> WSL-1 | <https://github.com/zhongfly/mpv-winbuild> | v0.41.0-821-g62f149466 (2026-06-27) | `mpv --version`（以命令输出为准，不用文件夹名） | daily build 2026-06-27³ | 🔄 ✅ |
 | YUView-Win | Win | <https://github.com/IENT/YUView> | v2.14-322 | `exiftool YUView.exe \| grep "Product Version"` | v2.14 | ✅ |
 | MediaInfo_GUI | Win | <https://github.com/MediaArea/MediaInfo> | 26.01.0 | `exiftool MediaInfo.exe \| grep "Product Version"` | v26.05 | ❌ |
 | ImageGlass_x64 | Win | <https://github.com/d2phap/ImageGlass> | 9.5.0.515 | `exiftool ImageGlass.exe \| grep "Product Version"` | 9.5.0.515 | ✅ |
@@ -138,7 +131,14 @@ sha256sum /tmp/CC-Switch-v3.16.4-macOS.dmg
 | Dism++x64 | Win | <https://github.com/Chuyu-Team/Dism-Multi-language> | 10.1.1002.1 | `exiftool Dism++x64.exe \| grep "Product Version"` | v10.1.1002.2 (2023-03-26)¹⁰ | ❌ |
 | ProcessExplorer¹¹ | Win | <https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer> | 17.12 | `exiftool procexp64.exe \| grep "Product Version"` | v17.12 (2026-05-07) | ✅ |
 | Source Insight 4.0¹² | Win | <https://www.sourceinsight.com/download/> | 4.0.0150 | `exiftool sourceinsight4.exe \| grep "Product Version"` | 4.0.0150 (2026-02-06) | ✅ |
-| **WSL** | | | | | | |
+
+### WSL-1
+
+| 本地文件/文件夹 | 平台 | 参考 URL | 本地版本 | 查本地版本方法 | 最新版本 | 是否最新 |
+| ---------------- | ------ | -------- | --------- | -------------- | -------- | ------ |
+| scrcpy | WSL-1 | <https://github.com/Genymobile/scrcpy> | 4.0 | `scrcpy --version` | v4.0 | ✅ |
+| jadx-gui-1.5.5 | WSL-1 | <https://github.com/skylot/jadx> | 1.5.5 | `exiftool jadx-gui.exe \| grep "Product Version"` | v1.5.5 | ✅ |
+| mpv-x86_64-v3 | WSL-1 | <https://github.com/zhongfly/mpv-winbuild> | v0.41.0-821-g62f149466 (2026-06-27) | `mpv --version`（以命令输出为准，不用文件夹名） | daily build 2026-06-27³ | 🔄 ✅ |
 | ffmpeg | WSL-1⁵ | <https://github.com/BtbN/FFmpeg-Builds> | n8.1.2 (2026-06-27) | `ffmpeg -version`（以命令输出为准，不用文件夹名） | daily build 2026-06-27³ | 🔄 ✅ |
 | git | WSL-1 | <https://github.com/git/git> | 2.54.0 | `git --version` | v2.54.0 | ✅ |
 | yt-dlp | WSL-1 | <https://github.com/yt-dlp/yt-dlp> | 2026.06.09 | `yt-dlp --version` | 2026.06.09 | ✅ |
@@ -150,10 +150,16 @@ sha256sum /tmp/CC-Switch-v3.16.4-macOS.dmg
 | fastfetch¹³ | WSL-1 | <https://github.com/fastfetch-cli/fastfetch> | 2.65.2 | `fastfetch --version` | 2.65.2 | 🔨 ✅ |
 | gh | WSL-1 | <https://github.com/cli/cli> | 2.95.0 | `gh --version` | v2.95.0 | ✅ |
 | checksec | WSL-1 | <https://github.com/slimm609/checksec> | 3.2.0 | `checksec --version` | 3.2.0 | ✅ |
-| **macOS** | | | | | | |
+
+## 4. macOS
+
+### 原生软件
+
+| 本地文件/文件夹 | 平台 | 参考 URL | 本地版本 | 查本地版本方法 | 最新版本 | 是否最新 |
+| ---------------- | ------ | -------- | --------- | -------------- | -------- | ------ |
 | draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 30.2.6 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v30.2.6 | ✅ |
 | IINA | macOS | <https://github.com/iina/iina> | 1.4.4 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.4 | ✅ |
-| Stats | macOS | <https://github.com/exelban/stats> | 3.0.5 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.5 | ✅ |
+| Stats | macOS | <https://github.com/exelban/stats> | 3.0.6 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.6 | ✅ |
 | KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.10.5 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.10.5 | ✅ |
 | macOS (系统) | macOS | <https://support.apple.com/zh-cn/109033> | 15.7.7 | `sw_vers` | 15.7.7 (Sequoia)¹ | ✅ |
 | Android Studio⁶ | macOS | <https://developer.android.google.cn/studio/releases> | 2025.3 (AI-253.32098.37.2534.15232325) | `python3 -c "import json;print(json.load(open('/Applications/Android Studio.app/Contents/Resources/product-info.json'))['version'])"` | 2026.1.1 Patch 2 (2026-04-28) | ❌ |
@@ -163,10 +169,28 @@ sha256sum /tmp/CC-Switch-v3.16.4-macOS.dmg
 | iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.6.11 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.6.11² | ✅ |
 | Notepad-- | macOS | <https://github.com/cxasm/notepad--> | 3.7.3 | `defaults read /Applications/Notepad--.app/Contents/Info.plist CFBundleShortVersionString` | v3.7.3 | ✅ |
 | Ollama | macOS | <https://github.com/ollama/ollama> | 0.30.11 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.30.11 | ✅ |
-| gh | macOS | <https://github.com/cli/cli> | 2.95.0 | `gh --version` | v2.95.0 | ✅ |
+| gh | macOS | <https://github.com/cli/cli> | 2.96.0 | `gh --version` | v2.96.0 | ✅ |
 | checksec | macOS | <https://github.com/slimm609/checksec> | 3.2.0 | `checksec --version` | 3.2.0 | ✅ |
 | list_cpu_features¹⁴ | macOS | <https://github.com/google/cpu_features> | 0.11.0 | 源码 tag 推断（工具无 `--version` 输出） | 0.11.0 | 🔨 ✅ |
-| **Android** | | | | | | |
+
+### Homebrew
+
+Homebrew 主动安装的顶层包（`brew leaves | sort`），用于重装/迁移参考。
+
+```log
+automake bear binutils btop clang-format cloc cmake coreutils cppcheck ctags
+demumble docker docker-squash exiftool fastfetch ffmpeg@7 file-formula gh
+git-lfs gnu-sed htop lftp lld media-info meson mole node p7zip pcre pipx
+pkgconf python@3.9 qt scrcpy shellcheck the_silver_searcher tlrc trash tree
+wget xcodegen yt-dlp zsh-completions
+```
+
+`brew list --cask` : 暂无
+
+## 5. Android
+
+| 本地文件/文件夹 | 平台 | 参考 URL | 本地版本 | 查本地版本方法 | 最新版本 | 是否最新 |
+| ---------------- | ------ | -------- | --------- | -------------- | -------- | ------ |
 | Termux | Android | <https://github.com/termux/termux-app> | 0.118.3 | `adb shell dumpsys package com.termux \| grep versionName` | v0.118.3 (2025-05-22) | ✅ |
 | LibChecker⁸ | Android | <https://github.com/LibChecker/LibChecker> | 2.5.4.dev.4049e7c | `adb shell dumpsys package com.absinthe.libchecker \| grep versionName` | 2.5.4 (2026-06-17) | ✅ |
 | Clash Meta⁹ | Android | <https://github.com/MetaCubeX/ClashMetaForAndroid> | 2.11.30.Meta | `adb shell dumpsys package com.github.metacubex.clash.meta \| grep versionName` | v2.11.30 (2026-06-06) | ✅ |
@@ -187,5 +211,5 @@ sha256sum /tmp/CC-Switch-v3.16.4-macOS.dmg
 > ¹³ fastfetch 官方提供 Linux 预编译包，但在 WSL-1 上因 glibc 版本要求较高而无法直接运行，故源码编译以确保兼容；构建方式：`cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j && sudo cmake --install build`。 <br/>
 > ¹⁴ google/cpu_features 官方无预编译发行版，需源码编译；`list_cpu_features` 工具本身不输出自身版本号，版本由构建时所用源码 tag 推断。构建方式：`cmake -B build && cmake --build build -j && sudo cmake --install build`。 <br/>
 
-共 50 个条目（含跨平台重复，macOS 系统版本作为独立条目计入），40 个 GitHub 仓库（跨平台条目共享同一仓库时去重；Snipaste、Android Studio、macOS、Process Explorer、Source Insight 等闭源/非 GitHub 来源不计入）。
+共 53 个条目（含 3 条跨平台重复，macOS 系统版本作为独立条目计入），40 个 GitHub 仓库（跨平台条目共享同一仓库时去重；Snipaste、Android Studio、macOS、Process Explorer、Source Insight 等闭源/非 GitHub 来源不计入）。
 
