@@ -127,6 +127,7 @@
         .repo-stars { color: #f4bf75; white-space: nowrap; font-size: 0.9em; }
         .repo-desc { color: #eaeaea; margin-bottom: 10px; font-size: 0.9em; }
         .repo-meta { display: flex; flex-wrap: wrap; gap: 15px; font-size: 0.8em; color: #bbb; }
+        .meta-label { color: #f4bf75; }
         .lang-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
         .repo-lang { color: #63c0f5; text-shadow: 0 0 5px rgba(104,182,255,0.5); }
         .repo-topics { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
@@ -196,6 +197,7 @@
             <div class="sort-bar">
                 <span>Sort by:</span>
                 <button class="sort-btn active" data-sort="stars">⭐ Stars</button>
+                <button class="sort-btn" data-sort="starred">⭐ Recent</button>
                 <button class="sort-btn" data-sort="name">Name</button>
                 <button class="sort-btn" data-sort="pushed">Pushed</button>
                 <button class="sort-btn" data-sort="updated">Updated</button>
@@ -291,6 +293,7 @@
                     let wRel, wStars;
                     switch (currentSort) {
                         case 'stars':   wRel = 3; wStars = 5; break;
+                        case 'starred': wRel = 3; wStars = 5; break;
                         case 'name':    wRel = 5; wStars = 2; break;
                         case 'pushed':  wRel = 3; wStars = 4; break;
                         case 'updated': wRel = 3; wStars = 4; break;
@@ -301,6 +304,7 @@
                     if (scoreA !== scoreB) return scoreB - scoreA;
                     switch (currentSort) {
                         case 'stars': return b.stargazers_count - a.stargazers_count;
+                        case 'starred': return new Date(b.starred_at || 0) - new Date(a.starred_at || 0);
                         case 'name': return a.full_name.localeCompare(b.full_name);
                         case 'pushed': return new Date(b.pushed_at) - new Date(a.pushed_at);
                         case 'updated': return new Date(b.updated_at) - new Date(a.updated_at);
@@ -309,6 +313,7 @@
                 }
                 switch (currentSort) {
                     case 'stars': return b.stargazers_count - a.stargazers_count;
+                    case 'starred': return new Date(b.starred_at || 0) - new Date(a.starred_at || 0);
                     case 'name': return a.full_name.localeCompare(b.full_name);
                     case 'pushed': return new Date(b.pushed_at) - new Date(a.pushed_at);
                     case 'updated': return new Date(b.updated_at) - new Date(a.updated_at);
@@ -450,8 +455,9 @@
                     + '<div class="repo-desc">' + escapeHtml(repo.description || 'No description') + '</div>'
                     + '<div class="repo-meta">'
                     + '<span class="repo-lang"><span class="lang-dot" style="background:' + langColor + '"></span>' + escapeHtml(lang) + '</span>'
-                    + '<span>Pushed: ' + formatDate(repo.pushed_at) + '</span>'
-                    + '<span>Updated: ' + formatDate(repo.updated_at) + '</span>'
+                    + (repo.starred_at ? '<span><span class="meta-label">Starred:</span> ' + formatDate(repo.starred_at) + '</span>' : '')
+                    + '<span><span class="meta-label">Pushed:</span> ' + formatDate(repo.pushed_at) + '</span>'
+                    + '<span><span class="meta-label">Updated:</span> ' + formatDate(repo.updated_at) + '</span>'
                     + '</div>'
                     + (topics ? '<div class="repo-topics">' + topics + '</div>' : '')
                     + '</a>'

@@ -39,7 +39,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh api users/th1nk3r-ing/starred --paginate \
-            --jq '.[] | {full_name, description, stargazers_count, language, html_url, updated_at, pushed_at, topics}' \
+            -H "Accept: application/vnd.github.v3.star+json" \
+            --jq '.[] | .starred_at as $d | .repo | {full_name, description, stargazers_count, language, html_url, updated_at, pushed_at, topics, starred_at: $d}' \
             > /tmp/stars-raw.json
           python3 -c "
           import json, sys
