@@ -195,7 +195,7 @@ usbutils uuid-runtime vim wget wsl-setup xz-utils yasm zsh zstd
 
 | 软件 / 条目 | 平台 | 参考 URL | 本地版本 | 查本地版本方法 | 最新版本 | 是否最新 |
 | ---------------- | ------ | -------- | --------- | -------------- | -------- | ------ |
-| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 31.1.5 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v31.1.5 | ✅ |
+| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 31.1.8 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v31.1.8 | ✅ |
 | IINA | macOS | <https://github.com/iina/iina> | 1.4.4 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.4 | ✅ |
 | Stats | macOS | <https://github.com/exelban/stats> | 3.0.10 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.10 | ✅ |
 | KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.10.5 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.10.5 | ✅ |

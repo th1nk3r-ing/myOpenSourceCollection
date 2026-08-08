@@ -38,21 +38,21 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api users/th1nk3r-ing/starred --paginate \
+          gh api users/${{ github.repository_owner }}/starred --paginate \
             -H "Accept: application/vnd.github.v3.star+json" \
             --jq '.[] | .starred_at as $d | .repo | {full_name, description, stargazers_count, language, html_url, updated_at, pushed_at, topics, starred_at: $d}' \
             > /tmp/stars-raw.json
           python3 -c "
-          import json, sys
+          from datetime import datetime, timezone
+          import json
           data = []
           with open('/tmp/stars-raw.json') as f:
               for line in f:
                   line = line.strip()
                   if line:
-                      obj = json.loads(line)
-                      data.append(obj)
+                      data.append(json.loads(line))
           with open('stars-data.json', 'w') as f:
-              json.dump({'timestamp': __import__('datetime').datetime.utcnow().isoformat() + 'Z', 'repos': data}, f)
+              json.dump({'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'), 'repos': data}, f)
           "
       - name: Setup Pages
         uses: actions/configure-pages@v6
