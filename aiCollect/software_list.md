@@ -11,7 +11,7 @@
 | Win | 仅 Windows 原生 | 2026-07-06 |
 | Win -> WSL-1 | Windows 软链接到 WSL-1 | 2026-07-06 |
 | WSL-1 | 仅 WSL-1 环境（仅关注 x64 架构） | 2026-07-06 |
-| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-08-06 |
+| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-08-16 |
 | macOS Homebrew | macOS Homebrew 统一管理（`brew leaves`） | 2026-07-06 |
 | Android | Android 设备（通过 adb 查询本地版本，仅关注 arm64-v8a 架构） | 2026-06-23 |
 
@@ -197,7 +197,7 @@ usbutils uuid-runtime vim wget wsl-setup xz-utils yasm zsh zstd
 | ---------------- | ------ | -------- | --------- | -------------- | -------- | ------ |
 | draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 31.1.8 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v31.1.8 | ✅ |
 | IINA | macOS | <https://github.com/iina/iina> | 1.4.4 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.4 | ✅ |
-| Stats | macOS | <https://github.com/exelban/stats> | 3.0.10 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.10 | ✅ |
+| Stats | macOS | <https://github.com/exelban/stats> | 3.0.10 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.11 | ❌ |
 | KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.10.5 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.10.5 | ✅ |
 | macOS (系统) | macOS | <https://support.apple.com/zh-cn/109033> | 15.7.8 | `sw_vers` | 15.7.8 (Sequoia)⁸ | ✅ |
 | Android Studio⁴ | macOS | <https://developer.android.google.cn/studio/releases> | 2025.3 (AI-253.32098.37.2534.15232325) | `python3 -c "import json;print(json.load(open('/Applications/Android Studio.app/Contents/Resources/product-info.json'))['version'])"` | 2026.1.3 (Quail 3) | ❌ |
@@ -206,7 +206,7 @@ usbutils uuid-runtime vim wget wsl-setup xz-utils yasm zsh zstd
 | Clash Verge | macOS | <https://github.com/clash-verge-rev/clash-verge-rev> | 2.5.2 | `defaults read /Applications/Clash\ Verge.app/Contents/Info.plist CFBundleShortVersionString` | v2.5.2 | ✅ |
 | iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.6.11 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.6.11⁹ | ✅ |
 | Notepad-- | macOS | <https://github.com/cxasm/notepad--> | 3.8.2 | `defaults read /Applications/Notepad--.app/Contents/Info.plist CFBundleShortVersionString` | v3.8.2 | ✅ |
-| Ollama | macOS | <https://github.com/ollama/ollama> | 0.32.6 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.32.6 | ✅ |
+| Ollama | macOS | <https://github.com/ollama/ollama> | 0.32.13 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.32.13 | ✅ |
 | gh | macOS | <https://github.com/cli/cli> | 2.97.0 | `gh --version` | v2.97.0 | ✅ |
 | checksec | macOS | <https://github.com/slimm609/checksec> | 3.2.0 | `checksec --version` | 3.2.0 | ✅ |
 | list_cpu_features¹⁴ | macOS | <https://github.com/google/cpu_features> | 0.11.0 | 源码 tag 推断（工具无 `--version` 输出） | 0.11.0 | 🔨 ✅ |
