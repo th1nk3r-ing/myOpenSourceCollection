@@ -11,7 +11,7 @@
 | Win | 仅 Windows 原生 | 2026-08-20 |
 | Win -> WSL-1 | Windows 软链接到 WSL-1 | 2026-08-20 |
 | WSL-1 | 仅 WSL-1 环境（仅关注 x64 架构） | 2026-08-20 |
-| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-08-21 |
+| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-08-23 |
 | macOS Homebrew | macOS Homebrew 统一管理（`brew leaves`） | 2026-07-06 |
 | Android | Android 设备（通过 adb 查询本地版本，仅关注 arm64-v8a 架构） | 2026-08-20 |
 
@@ -194,7 +194,7 @@ usbutils uuid-runtime vim wget wsl-setup xz-utils yasm zsh zstd
 
 | 软件 / 条目 | 平台 | 参考 URL | 本地版本 | 查本地版本方法 | 最新版本 | 是否最新 |
 | ---------------- | ------ | -------- | --------- | -------------- | -------- | ------ |
-| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 31.1.8 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v31.1.8 | ✅ |
+| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 31.3.2 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v31.3.2 (2026-08-22) | ✅ |
 | IINA | macOS | <https://github.com/iina/iina> | 1.4.4 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.4 | ✅ |
 | Stats | macOS | <https://github.com/exelban/stats> | 3.0.11 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.11 | ✅ |
 | KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.10.5 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.10.5 | ✅ |
@@ -205,10 +205,11 @@ usbutils uuid-runtime vim wget wsl-setup xz-utils yasm zsh zstd
 | Clash Verge | macOS | <https://github.com/clash-verge-rev/clash-verge-rev> | 2.5.2 | `defaults read /Applications/Clash\ Verge.app/Contents/Info.plist CFBundleShortVersionString` | v2.5.2 | ✅ |
 | iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.6.11 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.6.11⁹ | ✅ |
 | Notepad-- | macOS | <https://github.com/cxasm/notepad--> | 3.8.3 | `defaults read /Applications/Notepad--.app/Contents/Info.plist CFBundleShortVersionString` | v3.8.3 (2026-08-20) | ✅ |
-| Ollama | macOS | <https://github.com/ollama/ollama> | 0.32.14 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.32.14 (2026-08-15) | ✅ |
-| gh | macOS | <https://github.com/cli/cli> | 2.97.0 | `gh --version` | v2.97.0 | ✅ |
+| Ollama | macOS | <https://github.com/ollama/ollama> | 0.32.15 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.32.15 (2026-08-19) | ✅ |
+| gh | macOS | <https://github.com/cli/cli> | 2.98.0 | `gh --version` | v2.98.0 (2026-08-20) | ✅ |
 | checksec | macOS | <https://github.com/slimm609/checksec> | 3.2.0 | `checksec --version` | 3.2.0 | ✅ |
 | list_cpu_features¹⁴ | macOS | <https://github.com/google/cpu_features> | 0.11.0 | 源码 tag 推断（工具无 `--version` 输出） | 0.11.0 | 🔨 ✅ |
+| VQ Analyzer¹⁶ | macOS | <https://cdn.vicuesoft.com/vqAnalyzer/docs/VQAnalyzerReleaseNotes.html> | 7.9.0 | 安装目录名 `VQAnalyzer_{ver}.app` 推断（Info.plist 为厂商内部编号，不采用） | 7.9.0 (2026) | ✅ |
 
 ### Homebrew
 
@@ -248,6 +249,7 @@ wget xcodegen yt-dlp zsh-completions
 > ¹³ Clash Meta（原 Clash for Android）Android 客户端仓库为 `MetaCubeX/ClashMetaForAndroid`，与核心项目 `MetaCubeX/mihomo` 版本号独立；本地 versionName 带 `.Meta` 后缀。 <br/>
 > ¹⁴ google/cpu_features 官方无预编译发行版，需源码编译；`list_cpu_features` 工具本身不输出自身版本号，版本由构建时所用源码 tag 推断。构建方式：`cmake -B build && cmake --build build -j && sudo cmake --install build`。 <br/>
 > ¹⁵ drawio release 命名规则：Windows 包无 arch 中缀（`draw.io-{ver}-windows.zip` / `-installer.exe`），macOS/Linux 包带 arch 中缀（`draw.io-{x64|arm64|universal}-{ver}.dmg`、`drawio-{amd64|arm64|x86_64}-{ver}.deb/.AppImage`）。 <br/>
+> ¹⁶ VQ Analyzer 为 VICUESOFT 闭源商业软件，无开源仓库 / GitHub Releases，最新版本以其 CDN 发布的 [ReleaseNotes](https://cdn.vicuesoft.com/vqAnalyzer/docs/VQAnalyzerReleaseNotes.html) 页为准（与 Snipaste / Source Insight 同类为闭源例外）；Info.plist 中 `CFBundleShortVersionString`（如 4.0.0）为厂商内部编号，与产品发布版本（7.9.0）不一致，本地版本以安装目录名后缀为准。 <br/>
 
-共 53 个软件条目（不含 apt / Homebrew 包列表；含 3 条跨平台重复——draw.io、gh、checksec 在 Win/WSL-1 与 macOS 间重复；macOS 系统版本作为独立条目计入），40 个 GitHub 仓库（跨平台条目共享同一仓库时去重；Snipaste、Android Studio、macOS、Process Explorer、Source Insight 等闭源/非 GitHub 来源不计入）。
+共 54 个软件条目（不含 apt / Homebrew 包列表；含 3 条跨平台重复——draw.io、gh、checksec 在 Win/WSL-1 与 macOS 间重复；macOS 系统版本作为独立条目计入），40 个 GitHub 仓库（跨平台条目共享同一仓库时去重；Snipaste、Android Studio、macOS、Process Explorer、Source Insight、VQ Analyzer 等闭源/非 GitHub 来源不计入）。
 
