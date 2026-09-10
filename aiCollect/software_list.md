@@ -11,8 +11,8 @@
 | Win | 仅 Windows 原生 | 2026-08-20 |
 | Win -> WSL-1 | Windows 软链接到 WSL-1 | 2026-08-20 |
 | WSL-1 | 仅 WSL-1 环境（仅关注 x64 架构） | 2026-08-20 |
-| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-08-28 |
-| macOS Homebrew | macOS Homebrew 统一管理（`brew leaves`） | 2026-07-06 |
+| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-09-10 |
+| macOS Homebrew | macOS Homebrew 统一管理（`brew leaves`） | 2026-09-10 |
 | Android | Android 设备（通过 adb 查询本地版本，仅关注 arm64-v8a 架构） | 2026-08-20 |
 
 **命令执行环境**：
@@ -194,19 +194,19 @@ usbutils uuid-runtime vim wget wsl-setup xz-utils yasm zsh zstd
 
 | 软件 / 条目 | 平台 | 参考 URL | 本地版本 | 查本地版本方法 | 最新版本 | 是否最新 |
 | ---------------- | ------ | -------- | --------- | -------------- | -------- | ------ |
-| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 31.3.2 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v31.3.2 (2026-08-22) | ✅ |
+| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 31.4.5 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v31.4.5 (2026-09-08) | ✅ |
 | IINA | macOS | <https://github.com/iina/iina> | 1.4.4 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.4 | ✅ |
-| Stats | macOS | <https://github.com/exelban/stats> | 3.0.13 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.13 (2026-08-23) | ✅ |
-| KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.11.0 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.11.0 (2026-08-27) | ✅ |
+| Stats | macOS | <https://github.com/exelban/stats> | 3.0.15 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.15 (2026-09-06) | ✅ |
+| KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.11.1 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.11.1 (2026-09-07) | ✅ |
 | macOS (系统) | macOS | <https://support.apple.com/zh-cn/109033> | 15.7.9 | `sw_vers` | 15.7.9 (Sequoia)⁸ | ✅ |
-| Android Studio⁴ | macOS | <https://developer.android.google.cn/studio/releases> | 2025.3 (AI-253.32098.37.2534.15232325) | `python3 -c "import json;print(json.load(open('/Applications/Android Studio.app/Contents/Resources/product-info.json'))['version'])"` | 2026.1.3 Patch 1 (Quail 3) | ❌ |
-| CC Switch | macOS | <https://github.com/farion1231/cc-switch> | 3.20.1 | `defaults read "/Applications/CC Switch.app/Contents/Info.plist" CFBundleShortVersionString` | v3.20.1 (2026-08-28) | ✅ |
-| AltTab | macOS | <https://github.com/lwouis/alt-tab-macos> | 11.5.0 | `defaults read /Applications/AltTab.app/Contents/Info.plist CFBundleShortVersionString` | v11.5.0 (2026-08-19) | ✅ |
+| Android Studio⁴ | macOS | <https://developer.android.google.cn/studio/releases> | 2025.3 (AI-253.32098.37.2534.15232325) | `python3 -c "import json;print(json.load(open('/Applications/Android Studio.app/Contents/Resources/product-info.json'))['version'])"` | 2026.1.4 (Quail 4) | ❌ |
+| CC Switch | macOS | <https://github.com/farion1231/cc-switch> | 3.20.2 | `defaults read "/Applications/CC Switch.app/Contents/Info.plist" CFBundleShortVersionString` | v3.20.2 (2026-09-07) | ✅ |
+| AltTab | macOS | <https://github.com/lwouis/alt-tab-macos> | 11.6.0 | `defaults read /Applications/AltTab.app/Contents/Info.plist CFBundleShortVersionString` | v11.6.0 (2026-09-05) | ✅ |
 | Clash Verge | macOS | <https://github.com/clash-verge-rev/clash-verge-rev> | 2.5.2 | `defaults read /Applications/Clash\ Verge.app/Contents/Info.plist CFBundleShortVersionString` | v2.5.2 | ✅ |
-| iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.6.11 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.6.11⁹ | ✅ |
+| iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.7.0 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.7.0⁹ | ✅ |
 | Notepad-- | macOS | <https://github.com/cxasm/notepad--> | 3.8.3 | `defaults read /Applications/Notepad--.app/Contents/Info.plist CFBundleShortVersionString` | v3.8.3 (2026-08-20) | ✅ |
-| Ollama | macOS | <https://github.com/ollama/ollama> | 0.33.1 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.33.1 (2026-08-26) | ✅ |
-| gh | macOS | <https://github.com/cli/cli> | 2.98.0 | `gh --version` | v2.98.0 (2026-08-20) | ✅ |
+| Ollama | macOS | <https://github.com/ollama/ollama> | 0.34.0 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.34.0 (2026-09-05) | ✅ |
+| gh | macOS | <https://github.com/cli/cli> | 2.100.0 | `gh --version` | v2.100.0 (2026-09-03) | ✅ |
 | checksec | macOS | <https://github.com/slimm609/checksec> | 3.2.0 | `checksec --version` | 3.2.0 | ✅ |
 | list_cpu_features¹⁴ | macOS | <https://github.com/google/cpu_features> | 0.11.0 | 源码 tag 推断（工具无 `--version` 输出） | 0.11.0 | 🔨 ✅ |
 | VQ Analyzer¹⁶ | macOS | <https://cdn.vicuesoft.com/vqAnalyzer/docs/VQAnalyzerReleaseNotes.html> | 7.9.0 | 安装目录名 `VQAnalyzer_{ver}.app` 推断（Info.plist 为厂商内部编号，不采用） | 7.9.0 (2026) | ✅ |
@@ -217,10 +217,10 @@ Homebrew 主动安装的顶层包（`brew leaves | sort`），用于重装/迁�
 
 ```log
 automake bear binutils btop clang-format cloc cmake coreutils cppcheck ctags
-demumble docker docker-squash exiftool fastfetch ffmpeg@7 file-formula gh
-git-lfs gnu-sed htop lftp lld media-info meson mole node p7zip pcre pipx
-pkgconf python@3.9 qt scrcpy shellcheck the_silver_searcher tlrc trash tree
-wget xcodegen yt-dlp zsh-completions
+demumble docker docker-squash exiftool fastfetch file-formula gh git-lfs gnu-sed go
+htop jadx lftp lld lldb media-info meson mole node p7zip pcre pipx
+pkgconf python@3.9 qt ripgrep scrcpy shellcheck taglib the_silver_searcher tlrc tmux
+trash tree wget xcodegen yt-dlp zsh-completions
 ```
 
 `brew list --cask` : 暂无
@@ -242,7 +242,7 @@ wget xcodegen yt-dlp zsh-completions
 > ⁶ Process Explorer 为微软 Sysinternals 闭源免费软件，无开源仓库 / GitHub Releases，版本信息与下载来自 [Sysinternals 官网](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer)（与 Snipaste / iTerm2 / Android Studio 同类为闭源例外）。 <br/>
 > ⁷ Source Insight 为闭源商业软件，无开源仓库 / GitHub Releases，版本信息与下载来自 [官网下载页](https://www.sourceinsight.com/download/)（与 Snipaste / iTerm2 / Process Explorer / Android Studio 同类为闭源例外）；本地安装路径为 `/mnt/c/Program Files (x86)/Source Insight 4.0/`（非 `ProgramFilesMy/`），版本号通过 `exiftool sourceinsight4.exe` 的 `Product Version` 字段获取（如 `4.0.150.0` → `4.0.0150`）。 <br/>
 > ⁸ macOS 当前关注 Sequoia (15.x) 分支，暂不关注 Tahoe (26) 版本 ⏸️，后续大版本（如 27）仍会关注。 <br/>
-> ⁹ iTerm2 无 GitHub Releases，最新版本来自 [官网](https://iterm2.com/downloads.html)。 <br/>
+> ⁹ iTerm2 无 GitHub Releases，最新版本来自 [官网](https://iterm2.com/downloads.html)；官网不可达时可改用 `gh api repos/gnachman/iTerm2/tags` 查看稳定 tag（与 exiftool 同类）。 <br/>
 > ¹⁰ exiftool 仓库不使用 GitHub Releases，仅用 tags 标记版本，需用 `gh api repos/exiftool/exiftool/tags -q '.[].name'` 查看（与 FFmpeg 同类）。本地从源码构建安装：`perl Makefile.PL && make -j && sudo make install`。 <br/>
 > ¹¹ fastfetch 官方提供 Linux 预编译包，但在 WSL-1 上因 glibc 版本要求较高而无法直接运行，故源码编译以确保兼容；构建方式：`cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j && sudo cmake --install build`。 <br/>
 > ¹² Android 应用本地版本通过 `adb shell dumpsys package <包名> | grep versionName` 查询；LibChecker 本地为开发构建快照（`2.5.4.5696014`），与正式 release `2.5.4` 同版本号，标记为 ✅。 <br/>
