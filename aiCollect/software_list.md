@@ -11,8 +11,8 @@
 | Win | 仅 Windows 原生 | 2026-08-20 |
 | Win -> WSL-1 | Windows 软链接到 WSL-1 | 2026-08-20 |
 | WSL-1 | 仅 WSL-1 环境（仅关注 x64 架构） | 2026-08-20 |
-| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-09-10 |
-| macOS Homebrew | macOS Homebrew 统一管理（`brew leaves`） | 2026-09-10 |
+| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-09-14 |
+| macOS Homebrew | macOS Homebrew 统一管理（`brew leaves`） | 2026-09-14 |
 | Android | Android 设备（通过 adb 查询本地版本，仅关注 arm64-v8a 架构） | 2026-08-20 |
 
 **命令执行环境**：
@@ -196,14 +196,14 @@ usbutils uuid-runtime vim wget wsl-setup xz-utils yasm zsh zstd
 | ---------------- | ------ | -------- | --------- | -------------- | -------- | ------ |
 | draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 31.4.5 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v31.4.5 (2026-09-08) | ✅ |
 | IINA | macOS | <https://github.com/iina/iina> | 1.4.4 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.4 | ✅ |
-| Stats | macOS | <https://github.com/exelban/stats> | 3.0.15 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.15 (2026-09-06) | ✅ |
+| Stats | macOS | <https://github.com/exelban/stats> | 3.0.16 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.16 (2026-09-13) | ✅ |
 | KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.11.1 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.11.1 (2026-09-07) | ✅ |
 | macOS (系统) | macOS | <https://support.apple.com/zh-cn/109033> | 15.7.9 | `sw_vers` | 15.7.9 (Sequoia)⁸ | ✅ |
 | Android Studio⁴ | macOS | <https://developer.android.google.cn/studio/releases> | 2025.3 (AI-253.32098.37.2534.15232325) | `python3 -c "import json;print(json.load(open('/Applications/Android Studio.app/Contents/Resources/product-info.json'))['version'])"` | 2026.1.4 (Quail 4) | ❌ |
-| CC Switch | macOS | <https://github.com/farion1231/cc-switch> | 3.20.2 | `defaults read "/Applications/CC Switch.app/Contents/Info.plist" CFBundleShortVersionString` | v3.20.2 (2026-09-07) | ✅ |
-| AltTab | macOS | <https://github.com/lwouis/alt-tab-macos> | 11.6.0 | `defaults read /Applications/AltTab.app/Contents/Info.plist CFBundleShortVersionString` | v11.6.0 (2026-09-05) | ✅ |
+| CC Switch | macOS | <https://github.com/farion1231/cc-switch> | 3.20.3 | `defaults read "/Applications/CC Switch.app/Contents/Info.plist" CFBundleShortVersionString` | v3.20.3 (2026-09-11) | ✅ |
+| AltTab | macOS | <https://github.com/lwouis/alt-tab-macos> | 11.6.1 | `defaults read /Applications/AltTab.app/Contents/Info.plist CFBundleShortVersionString` | v11.6.1 (2026-09-11) | ✅ |
 | Clash Verge | macOS | <https://github.com/clash-verge-rev/clash-verge-rev> | 2.5.2 | `defaults read /Applications/Clash\ Verge.app/Contents/Info.plist CFBundleShortVersionString` | v2.5.2 | ✅ |
-| iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.7.0 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.7.0⁹ | ✅ |
+| iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.7.1 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.7.1⁹ | ✅ |
 | Notepad-- | macOS | <https://github.com/cxasm/notepad--> | 3.8.3 | `defaults read /Applications/Notepad--.app/Contents/Info.plist CFBundleShortVersionString` | v3.8.3 (2026-08-20) | ✅ |
 | Ollama | macOS | <https://github.com/ollama/ollama> | 0.34.0 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.34.0 (2026-09-05) | ✅ |
 | gh | macOS | <https://github.com/cli/cli> | 2.100.0 | `gh --version` | v2.100.0 (2026-09-03) | ✅ |
@@ -216,7 +216,7 @@ usbutils uuid-runtime vim wget wsl-setup xz-utils yasm zsh zstd
 Homebrew 主动安装的顶层包（`brew leaves | sort`），用于重装/迁移参考。平台表中本行的"最近检查"指包列表刷新时间，非版本校验。
 
 ```log
-automake bear binutils btop clang-format cloc cmake coreutils cppcheck ctags
+apktool automake bear binutils btop clang-format cloc cmake coreutils cppcheck ctags
 demumble docker docker-squash exiftool fastfetch file-formula gh git-lfs gnu-sed go
 htop jadx lftp lld lldb media-info meson mole node p7zip pcre pipx
 pkgconf python@3.9 qt ripgrep scrcpy shellcheck taglib the_silver_searcher tlrc tmux
