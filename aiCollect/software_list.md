@@ -11,8 +11,8 @@
 | Win | 仅 Windows 原生 | 2026-08-20 |
 | Win -> WSL-1 | Windows 软链接到 WSL-1 | 2026-08-20 |
 | WSL-1 | 仅 WSL-1 环境（仅关注 x64 架构） | 2026-08-20 |
-| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-09-30 |
-| macOS Homebrew | macOS Homebrew 统一管理（`brew leaves`） | 2026-09-30 |
+| macOS | 仅 macOS（仅关注 arm64 架构） | 2026-10-05 |
+| macOS Homebrew | macOS Homebrew 统一管理（`brew leaves`） | 2026-10-05 |
 | Android | Android 设备（通过 adb 查询本地版本，仅关注 arm64-v8a 架构） | 2026-08-20 |
 
 **命令执行环境**：
@@ -194,22 +194,22 @@ usbutils uuid-runtime vim wget wsl-setup xz-utils yasm zsh zstd
 
 | 软件 / 条目 | 平台 | 参考 URL | 本地版本 | 查本地版本方法 | 最新版本 | 是否最新 |
 | ---------------- | ------ | -------- | --------- | -------------- | -------- | ------ |
-| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 31.5.3 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v31.5.3 (2026-09-26) | ✅ |
-| IINA | macOS | <https://github.com/iina/iina> | 1.4.4 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.4.4 | ✅ |
-| Stats | macOS | <https://github.com/exelban/stats> | 3.0.19 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.19 (2026-09-29) | ✅ |
+| draw.io | macOS | <https://github.com/jgraph/drawio-desktop> | 31.7.0 | `defaults read /Applications/draw.io.app/Contents/Info.plist CFBundleShortVersionString` | v31.7.0 (2026-10-02) | ✅ |
+| IINA | macOS | <https://github.com/iina/iina> | 1.5.0 | `defaults read /Applications/IINA.app/Contents/Info.plist CFBundleShortVersionString` | v1.5.0 (2026-10-03) | ✅ |
+| Stats | macOS | <https://github.com/exelban/stats> | 3.0.20 | `defaults read /Applications/Stats.app/Contents/Info.plist CFBundleShortVersionString` | v3.0.20 (2026-10-04) | ✅ |
 | KeyCastr | macOS | <https://github.com/keycastr/keycastr> | 0.11.1 | `defaults read /Applications/KeyCastr.app/Contents/Info.plist CFBundleShortVersionString` | v0.11.1 (2026-09-07) | ✅ |
 | macOS (系统) | macOS | <https://support.apple.com/zh-cn/109033> | 15.8.1 | `sw_vers` | 15.8.1 (Sequoia)⁸ | ✅ |
-| Android Studio⁴ | macOS | <https://developer.android.google.cn/studio/releases> | 2025.3 (AI-253.32098.37.2534.15232325) | `python3 -c "import json;print(json.load(open('/Applications/Android Studio.app/Contents/Resources/product-info.json'))['version'])"` | 2026.1.4 Patch 1 (Quail 4) | ❌ |
+| Android Studio⁴ | macOS | <https://developer.android.google.cn/studio/releases> | 2025.3 (AI-253.32098.37.2534.15232325) | `python3 -c "import json;print(json.load(open('/Applications/Android Studio.app/Contents/Resources/product-info.json'))['version'])"` | 2026.2.1 (Rabbit 1) (2026-10-01) | ❌ |
 | CC Switch | macOS | <https://github.com/farion1231/cc-switch> | 3.20.4 | `defaults read "/Applications/CC Switch.app/Contents/Info.plist" CFBundleShortVersionString` | v3.20.4 (2026-09-22) | ✅ |
 | AltTab | macOS | <https://github.com/lwouis/alt-tab-macos> | 11.8.0 | `defaults read /Applications/AltTab.app/Contents/Info.plist CFBundleShortVersionString` | v11.8.0 (2026-09-26) | ✅ |
-| Clash Verge | macOS | <https://github.com/clash-verge-rev/clash-verge-rev> | 2.5.6 | `defaults read /Applications/Clash\ Verge.app/Contents/Info.plist CFBundleShortVersionString` | v2.5.6 (2026-09-26) | ✅ |
+| Clash Verge | macOS | <https://github.com/clash-verge-rev/clash-verge-rev> | 2.5.7 | `defaults read /Applications/Clash\ Verge.app/Contents/Info.plist CFBundleShortVersionString` | v2.5.7 (2026-10-02) | ✅ |
 | iTerm2 | macOS | <https://github.com/gnachman/iTerm2> | 3.7.3 | `defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString` | 3.7.3⁹ (2026-09-22) | ✅ |
 | Notepad-- | macOS | <https://github.com/cxasm/notepad--> | 3.9.0 | `defaults read /Applications/Notepad--.app/Contents/Info.plist CFBundleShortVersionString` | v3.9.0 (2026-09-18) | ✅ |
-| Ollama | macOS | <https://github.com/ollama/ollama> | 0.34.4 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.34.4 (2026-09-23) | ✅ |
-| gh | macOS | <https://github.com/cli/cli> | 2.101.0 | `gh --version` | v2.101.0 (2026-09-15) | ✅ |
+| Ollama | macOS | <https://github.com/ollama/ollama> | 0.35.1 | `defaults read /Applications/Ollama.app/Contents/Info.plist CFBundleShortVersionString` | v0.35.1 (2026-09-29) | ✅ |
+| gh | macOS | <https://github.com/cli/cli> | 2.102.0 | `gh --version` | v2.102.0 (2026-09-30) | ✅ |
 | checksec | macOS | <https://github.com/slimm609/checksec> | 3.2.0 | `checksec --version` | 3.2.0 | ✅ |
 | list_cpu_features¹⁴ | macOS | <https://github.com/google/cpu_features> | 0.11.0 | 源码 tag 推断（工具无 `--version` 输出） | 0.11.0 | 🔨 ✅ |
-| VQ Analyzer¹⁶ | macOS | <https://cdn.vicuesoft.com/vqAnalyzer/docs/VQAnalyzerReleaseNotes.html> | 7.9.0 (86970) | 安装目录名 `VQAnalyzer_{ver}.app` 推断（Info.plist 为厂商内部编号，不采用） | 7.10.0 (2026-09-28)¹⁶ | ❌ |
+| VQ Analyzer¹⁶ | macOS | <https://cdn.vicuesoft.com/vqAnalyzer/docs/VQAnalyzerReleaseNotes.html> | 7.10.0 | 安装目录名 `VQAnalyzer_{ver}.app` 推断（Info.plist 为厂商内部编号，不采用） | 7.10.0 (2026-09-28)¹⁶ | ✅ |
 
 ### Homebrew
 
