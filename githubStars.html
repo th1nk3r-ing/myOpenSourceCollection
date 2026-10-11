@@ -261,7 +261,10 @@
         }
 
         function formatDate(dateStr) {
-            return new Date(dateStr).toISOString().split('T')[0];
+            if (!dateStr) return '—';
+            const date = new Date(dateStr);
+            if (Number.isNaN(date.getTime())) return '—';
+            return date.toISOString().split('T')[0];
         }
 
         function getLangColor(lang) {
@@ -279,15 +282,17 @@
                 }
                 return true;
             });
+            const search = currentSearch.toLowerCase();
+            const maxStars = search
+                ? filtered.reduce((max, repo) => Math.max(max, repo.stargazers_count), 1)
+                : 1;
+            const logMax = Math.log(maxStars + 1);
             filtered.sort((a, b) => {
-                if (currentSearch) {
-                    const s = currentSearch.toLowerCase();
-                    const maxStars = Math.max(...filtered.map(r => r.stargazers_count), 1);
-                    const logMax = Math.log(maxStars + 1);
-                    const relA = a.full_name.toLowerCase().includes(s) ? 2
-                               : (a.description || '').toLowerCase().includes(s) ? 1 : 0;
-                    const relB = b.full_name.toLowerCase().includes(s) ? 2
-                               : (b.description || '').toLowerCase().includes(s) ? 1 : 0;
+                if (search) {
+                    const relA = a.full_name.toLowerCase().includes(search) ? 2
+                               : (a.description || '').toLowerCase().includes(search) ? 1 : 0;
+                    const relB = b.full_name.toLowerCase().includes(search) ? 2
+                               : (b.description || '').toLowerCase().includes(search) ? 1 : 0;
                     const starsScoreA = Math.log(a.stargazers_count + 1) / logMax;
                     const starsScoreB = Math.log(b.stargazers_count + 1) / logMax;
                     let wRel, wStars;
@@ -343,7 +348,10 @@
             }
             if (params.has('lang')) currentFilter = params.get('lang');
             if (params.has('sort')) currentSort = params.get('sort');
-            if (params.has('page')) currentPage = parseInt(params.get('page')) || 1;
+            if (params.has('page')) {
+                const page = Number(params.get('page'));
+                currentPage = Number.isSafeInteger(page) && page > 0 ? page : 1;
+            }
         }
 
         function applyStateToUI() {
@@ -428,7 +436,8 @@
         function renderRepos() {
             const filtered = getFilteredRepos();
             const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
-            if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
+            currentPage = Math.max(1, Math.min(currentPage, totalPages || 1));
+            saveState();
 
             const startIdx = (currentPage - 1) * PAGE_SIZE;
             const pageItems = filtered.slice(startIdx, startIdx + PAGE_SIZE);
@@ -464,7 +473,6 @@
                     + '</div>';
             }).join('');
             renderPagination(filtered);
-            saveState();
         }
 
         document.getElementById('searchInput').addEventListener('input', e => {
@@ -492,7 +500,10 @@
             .then(data => {
                 allRepos = data.repos;
                 dataTimestamp = data.timestamp;
-                document.getElementById('updateTime').textContent = new Date(dataTimestamp).toISOString().slice(0, 16).replace("T", " ");
+                const timestamp = new Date(dataTimestamp);
+                document.getElementById('updateTime').textContent = Number.isNaN(timestamp.getTime())
+                    ? '—'
+                    : timestamp.toISOString().slice(0, 16).replace('T', ' ');
                 loadState();
                 applyStateToUI();
                 renderFilters();
